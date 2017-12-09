@@ -20,4 +20,11 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('/home/configuracion','ConfiguracionController@index');
 Route::get('/home/perfil', 'PerfilController@index');
-Route::get('/scrapper', 'WebScraperController@index');
+
+Route::get('/scrapper', function() {
+    $crawler = Goutte::request('GET', 'https://duckduckgo.com/html/?q=Laravel');
+    $crawler->filter('.result__title .result__a')->each(function ($node) {
+        dump($node->text());
+    });
+    return view('scrapper');
+});
