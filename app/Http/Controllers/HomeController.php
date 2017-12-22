@@ -25,4 +25,13 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function searchIsbn(Request $request) {
+        $isbn = $request->input('isbnbook');
+            if (!empty($isbn)) {
+                $ruta = "http://isbndb.com/api/v2/json/LOWY1B9W/books?q=" . $isbn;
+                echo $ruta;
+            }
+
+    }
 }

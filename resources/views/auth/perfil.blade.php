@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="container">
             <div class="navbar">
-                <button class="btn btn-sm  btn-success" style="border-radius: 20px;" ><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Home</button>
+                <a href="/home" class="btn btn-sm  btn-success" style="border-radius: 20px;" ><span class="glyphicon glyphicon-chevron-left"></span>&nbsp;Home</a>
             </div>
         </div>
 		<div class="">
