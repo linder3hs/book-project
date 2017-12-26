@@ -33,7 +33,7 @@
                                             dataType: 'json',
                                             success: function (data) {
                                                 console.log(data['items'][0]['volumeInfo']['title']);
-                                                $('#content').html('<h5>Titulo del libro: ' +  data['items'][0]['volumeInfo']['title'] + '</h5>'+'<br>'+'<p>Autor:  '+data['items'][0]['volumeInfo']['authors'] + '</p>' +'<br>'+'<p>Año de publicació '+data['items'][0]['volumeInfo']['publishedDate'] + '</p>' + '<br>');
+                                                $('#content').html('<h5>Titulo del libro: ' +  data['items'][0]['volumeInfo']['title'] + '</h5>'+'<p>Autor:  '+data['items'][0]['volumeInfo']['authors'] + '</p>' +'<p>Año de publicación:  '+data['items'][0]['volumeInfo']['publishedDate'] + '</p>' + '<br>');
 
                                             }
                                         });
