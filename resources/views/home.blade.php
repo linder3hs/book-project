@@ -33,9 +33,9 @@
                                             dataType: 'json',
                                             success: function (data) {
                                                 console.log(data['items'][0]['volumeInfo']['title']);
-                                                $('#content').append('<h5>Titulo del libro' + data['items'][0]['volumeInfo']['title'] + '</h5>'+'<br>');
-                                                $('#content').append(data['items'][0]['volumeInfo']['authors'] + '<br>');
-                                                $('#content').append(data['items'][0]['volumeInfo']['publishedDate'] + '<br>');
+                                                $('#content').html('<h5>Titulo del libro' + data['items'][0]['volumeInfo']['title'] + '</h5>'+'<br>');
+                                                $('#content').html('<p>'+data['items'][0]['volumeInfo']['authors'] + '</p>' +'<br>');
+                                                $('#content').html('<p>'+data['items'][0]['volumeInfo']['publishedDate'] + '</p>' + '<br>');
                                             }
                                         });
                                     } else {
