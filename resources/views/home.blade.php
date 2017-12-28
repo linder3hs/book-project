@@ -61,6 +61,7 @@
                                     $('#btnRe').hide();
                                     $('#btnCancel').hide();
                                     $('.btnBuscar').show();
+                                    $('#content').html("")
                                 });
                             });
                         </script>
