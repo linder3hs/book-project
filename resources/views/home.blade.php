@@ -14,8 +14,8 @@
                         <input  name="isbnbook" type="number" class="form-control" id="numberIsbn" placeholder="Ingrese un ISBN">
                         <br>
                         <input type="button" class="btn btn-sm btn-success btnBuscar" value="Buscar">
-                        <input style="display: none;" type="submit" value="Registrar" class="btn btn-primary">
-                        <button class="btn btn-default" style="display: none;">Cancelar</button>
+                        <input id="btnRe" style="display: none;" type="submit" value="Registrar" class="btn btn-primary">
+                        <button id="btnCancel" class="btn btn-default" style="display: none;">Cancelar</button>
 
                         <div id="content"></div>
                         <img id="image" alt="">
@@ -41,6 +41,8 @@
                                                     console.log("foto: "+ data['items'][0]['volumeInfo']['imageLinks']['smallThumbnail']);
                                                     $('#content').html('<h5>Titulo del libro: ' +  data['items'][0]['volumeInfo']['title'] + '</h5>'+'<p>Autor:  '+data['items'][0]['volumeInfo']['authors'] + '</p>' +'<p>Año de publicación:  '+data['items'][0]['volumeInfo']['publishedDate'] + '</p>' + '<br>');
                                                     $('#image').attr('src', img);
+                                                    $('#btnRe').show();
+                                                    $('#btnCancel').show();
                                                 } else {
                                                     $('#content').html("<p>Libro no encontrado</p>")
                                                     $('#image').attr('src', "");
