@@ -13,7 +13,6 @@ $(document).ready(function () {
                 data: { get_param: 'value' },
                 dataType: 'json',
                 success: function (data) {
-                    if (data == 'success') {
                         var img = data['items']['0']['volumeInfo']['imageLinks']['smallThumbnail'];
                         console.log("foto: " + data['items'][0]['volumeInfo']['imageLinks']['smallThumbnail']);
                         $('#content').html('<h5>Titulo del libro: ' + data['items'][0]['volumeInfo']['title'] + '</h5>' + '<p>Autor:  ' + data['items'][0]['volumeInfo']['authors'] + '</p>' + '<p>Año de publicación:  ' + data['items'][0]['volumeInfo']['publishedDate'] + '</p>' + '<br>');
@@ -21,9 +20,6 @@ $(document).ready(function () {
                         $('#btnRe').show();
                         $('#btnCancel').show();
                         $('.btnBuscar').hide();
-                    } else {
-                        bookNoFound();
-                    }
                 }
             });
         } else {
