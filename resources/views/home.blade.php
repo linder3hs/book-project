@@ -43,6 +43,7 @@
                                                     $('#image').attr('src', img);
                                                     $('#btnRe').show();
                                                     $('#btnCancel').show();
+                                                    $('.btnBuscar').hide();
                                                 } else {
                                                     $('#content').html("<p>Libro no encontrado</p>")
                                                     $('#image').attr('src', "");
