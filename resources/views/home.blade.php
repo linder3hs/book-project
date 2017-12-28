@@ -36,8 +36,8 @@
                                             data: { get_param: 'value' },
                                             dataType: 'json',
                                             success: function (data) {
-                                                if (!data.empty()) {
                                                     var img = data['items'][0]['volumeInfo']['imageLinks']['smallThumbnail'];
+                                                if (img.empty()) {
                                                     console.log("foto: " + data['items'][0]['volumeInfo']['imageLinks']['smallThumbnail']);
                                                     $('#content').html('<h5>Titulo del libro: ' + data['items'][0]['volumeInfo']['title'] + '</h5>' + '<p>Autor:  ' + data['items'][0]['volumeInfo']['authors'] + '</p>' + '<p>Año de publicación:  ' + data['items'][0]['volumeInfo']['publishedDate'] + '</p>' + '<br>');
                                                     $('#image').attr('src', img);
