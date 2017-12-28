@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--}}
     <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -36,7 +36,7 @@
     </div>
 </div>
 <script>
-    // Ajax para buscar libros por isbn
+    /*// Ajax para buscar libros por isbn
     var url = "https://www.googleapis.com/books/v1/volumes?q=isbn:9780545010221";
     $(document).ready(function () {
 
@@ -65,7 +65,7 @@
                     }
                 });
             } else {
-                alert("Debe rellenar los campos");
+                alert("Debe rellenar los campos o ingresar valores validos");
             }
         });
 
@@ -86,6 +86,6 @@
             $('#contenedorIsbn').slideDown();
             $('.sinIsbn').slideUp();
         });
-    });
+    });*/
 </script>
 @endsection
