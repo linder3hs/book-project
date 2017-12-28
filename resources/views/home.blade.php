@@ -1,6 +1,5 @@
 @extends('layouts.app')
 @section('content')
-    {{--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>--}}
     <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -18,8 +17,8 @@
 
                         <div id="content"></div>
                         <img id="image" alt="">
-                        <input id="btnRe" style="display: none;" type="submit" value="Registrar" class="btn btn-primary">
-                        <button id="btnCancel" class="btn btn-default" style="display: none;">Cancelar</button>
+                        <input id="btnRe" style="display: none;" type="submit" value="Registrar" class="btn btn-sm btn-primary">
+                        <button id="btnCancel" class="btn btn-sm btn-default" style="display: none;">Cancelar</button>
                         </div>
                         <div class="sinIsbn" style="display: none;">
                             <p>No se encontro el libro con el isbn que puso porfavor complete los datos.</p>
