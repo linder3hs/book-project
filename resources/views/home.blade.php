@@ -14,11 +14,12 @@
                         <input  name="isbnbook" type="number" class="form-control" id="numberIsbn" placeholder="Ingrese un ISBN">
                         <br>
                         <input type="button" class="btn btn-sm btn-success btnBuscar" value="Buscar">
-                        <input id="btnRe" style="display: none;" type="submit" value="Registrar" class="btn btn-primary">
-                        <button id="btnCancel" class="btn btn-default" style="display: none;">Cancelar</button>
 
                         <div id="content"></div>
                         <img id="image" alt="">
+                        <input id="btnRe" style="display: none;" type="submit" value="Registrar" class="btn btn-primary">
+                        <button id="btnCancel" class="btn btn-default" style="display: none;">Cancelar</button>
+
                         <script>
                             // Ajax para buscar libros por isbn
                             var url = "https://www.googleapis.com/books/v1/volumes?q=isbn:9780545010221";
@@ -54,6 +55,12 @@
                                     } else {
                                         alert("Ingrese un isbn valido");
                                     }
+                                });
+
+                                $('#btnCancel').on('click', function () {
+                                    $('#btnRe').hide();
+                                    $('#btnCancel').hide();
+                                    $('.btnBuscar').show();
                                 });
                             });
                         </script>
