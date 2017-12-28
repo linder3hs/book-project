@@ -58,10 +58,11 @@
                                 });
 
                                 $('#btnCancel').on('click', function () {
-                                    $('#btnRe').hide();
-                                    $('#btnCancel').hide();
-                                    $('.btnBuscar').show();
-                                    $('#content').html("")
+                                    $('#btnRe').slideUp();
+                                    $('#btnCancel').slideUp();
+                                    $('.btnBuscar').slideDown();
+                                    $('#content').html("");
+                                    $('#image').attr('src', "");
                                 });
                             });
                         </script>
