@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\book_register;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,17 +22,20 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
-    {
+    public function index() {
         return view('home');
     }
 
-    public function searchIsbn(Request $request) {
-        $isbn = $request->input('isbnbook');
-            if (!empty($isbn)) {
-                $ruta = "http://isbndb.com/api/v2/json/LOWY1B9W/books?q=" . $isbn;
-                echo $ruta;
-            }
-
+    public function createBook(Request $request) {
+        $user = $request->user();
+        $book = new book_register();
+        $book->title = $request->input('title');
+        $book->author = $request->input('author');
+        $book->public_date = $request->input('public-date');
+        $book->user_id = $user->id;
+        $book->save();
+        return redirect('home');
     }
+
+
 }
