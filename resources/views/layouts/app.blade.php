@@ -5,9 +5,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/datepicker/bootstrap-datepicker3.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap-datepicker.es.min.js"></script>
+    <script src="/js/bootstrap-datepicker.min.js"></script>
     <script src="/js/book.js"></script>
+
 
 
     <!-- CSRF Token -->
@@ -20,7 +25,7 @@
 
     <!-- Scripts -->
     <script>
-        window.Laravel = <?php echo json_encode([
+        window.Laravel =<?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>

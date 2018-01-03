@@ -50,3 +50,6 @@ $(document).ready(function () {
         $('.sinIsbn').slideUp();
     });
 });
+
+$( "#datepicker" ).datepicker();
+
