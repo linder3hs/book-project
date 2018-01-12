@@ -13,8 +13,10 @@ class CreateBookRegistersTable extends Migration
      */
     public function up()
     {
-        Schema::create('book_registers', function (Blueprint $table) {
+        Schema::create('register_book_out_isbns', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->string('title');
             $table->string('author');
             $table->dateTime('public_date');
@@ -30,6 +32,6 @@ class CreateBookRegistersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('book_registers');
+        Schema::dropIfExists('register_book_out_isbns');
     }
 }
