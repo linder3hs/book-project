@@ -14,4 +14,8 @@ class PerfilController extends Controller
     public function index() {
     	return view('auth.perfil');
     }
+
+    public function edit() {
+	     return view('auth.edit_profile');
+    }
 }

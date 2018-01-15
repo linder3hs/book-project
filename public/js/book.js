@@ -1,6 +1,4 @@
 // Ajax para buscar libros por isbn
-var url = "https://www.googleapis.com/books/v1/volumes?q=isbn:9780545010221";
-$(document).ready(function () {
 
     // Capturamos el valor del input y traemos los datos en json
     $('.btnBuscar').on('click', function () {
@@ -49,7 +47,5 @@ $(document).ready(function () {
         $('#contenedorIsbn').slideDown();
         $('.sinIsbn').slideUp();
     });
-});
 
-$( "#datepicker" ).datepicker();
 

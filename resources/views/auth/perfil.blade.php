@@ -20,7 +20,7 @@
 						<label>Pon tu foto de perfil</label>
 						<input type="file" name="" value="Foto">
 					</div>
-					<input type="submit" name="" value="Actualizar" class="btn btn-success">		
+					<a href="/home/edit" class="btn btn-sm btn-success">Actualizar</a>
 				</form>
 			</div>
 		</div>
