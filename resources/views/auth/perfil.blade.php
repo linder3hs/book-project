@@ -12,7 +12,7 @@
 		<div class="">
 			<div class="col-md-3 col-xs-12 col-sm-3">
 				<img style="width: 50%" src="https://www.atomix.com.au/media/2015/06/atomix_user31.png" class="img-responsive img-rounded">
-				<p>Nombre: &nbsp; <span>{{ Auth::user()->name }}</span></p>
+				<p>Nombre: &nbsp; <span>{{ Auth::user()->name . " " .Auth::user()->second_name }}</span></p>
 				<p>Apellido: &nbsp; <span>{{ Auth::user()->apellido }}</span> </p>
 				<p>E-mail: &nbsp; <span>{{ Auth::user()->email }}</span> </p>
 				<form>
@@ -20,7 +20,7 @@
 						<label>Pon tu foto de perfil</label>
 						<input type="file" name="" value="Foto">
 					</div>
-					<a href="/home/edit" class="btn btn-sm btn-success">Actualizar</a>
+					<a href="/home/edit/{{ Auth::user()->id}}" class="btn btn-sm btn-success">Actualizar</a>
 				</form>
 			</div>
 		</div>
