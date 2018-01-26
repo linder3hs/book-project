@@ -11,22 +11,29 @@
                     Bienvenido a Book
                     <div class="container-fluid">
                         <div id="contenedorIsbn">
-                        <input  name="isbnbook" type="number" class="form-control" id="numberIsbn" placeholder="Ingrese un ISBN">
-                        <br>
-                        <input type="button" class="btn btn-sm btn-success btnBuscar" value="Buscar">
-                        <div id="content"></div>
-                        <img id="image" alt="">
-                        <input id="btnRe" style="display: none;" type="submit" value="Registrar" class="btn btn-sm btn-primary">
-                        <button id="btnCancel" class="btn btn-sm btn-default" style="display: none;">Cancelar</button>
+                                <input name="isbnbook" type="number" class="form-control" id="numberIsbn" placeholder="Ingrese un ISBN">
+                                <br>
+                                <input type="button" class="btn btn-sm btn-success btnBuscar" value="Buscar">
+                                <div id="content"></div>
+                                <img id="image" alt="">
+                            <form action="/home" method="post">
+                                <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input type="hidden" id="titlere" name="titlere">
+                                <input type="hidden" id="autorre" name="autorre">
+                                <input type="hidden" id="anopure" name="anopure">
+                                <input type="hidden" id="imgre" name="imgre">
+                                <input id="btnRe" style="display: none;" type="submit" value="Registrar" class="btn btn-sm btn-primary">
+                                <button id="btnCancel" class="btn btn-sm btn-default" style="display: none;">Cancelar</button>
+                            </form>
                         </div>
                         <div class="sinIsbn" style="display: none;">
                             <p>No se encontro el libro con el isbn que puso porfavor complete los datos.</p>
-                            <form action="/home" method="POST">
+                            <form action="/home/save" method="post" enctype="multipart/form-data" >
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input name="title" type="text" class="form-control" placeholder="Titulo del libro"><br>
                                 <input name="author" type="text" class="form-control" placeholder="Autor"><br>
                                 <input name="public-date" type="text" class="form-control datepicker" id="datepicker" placeholder="Año de publicación"><br>
-                                Importa una Imagen<input type="file"><br>
+                                Importa una Imagen<input name="imagen" type="file"><br>
                                 <input name="" type="submit" class="btn btn-sm btn-success" value="Guardar">
                                 <button id="cancelSinIsbn" class="btn btn-sm btn-default">Cancelar</button>
                             </form>
@@ -54,7 +61,11 @@
                         console.log(data['totalItems']);
                         if (data['totalItems'] == 1) {
                             var img = data['items']['0']['volumeInfo']['imageLinks']['smallThumbnail'];
+                            $('#imgre').val(img);
                             console.log("foto: " + data['items'][0]['volumeInfo']['imageLinks']['smallThumbnail']);
+                            $('#titlere').val(data['items'][0]['volumeInfo']['title']);
+                            $('#autorre').val(data['items'][0]['volumeInfo']['authors']);
+                            $('#anopure').val(data['items'][0]['volumeInfo']['publishedDate']);
                             $('#content').html('<h5>Titulo del libro: ' + data['items'][0]['volumeInfo']['title'] + '</h5>' + '<p>Autor:  ' + data['items'][0]['volumeInfo']['authors'] + '</p>' + '<p>Año de publicación:  ' + data['items'][0]['volumeInfo']['publishedDate'] + '</p>' + '<br>');
                             $('#image').attr('src', data['items']['0']['volumeInfo']['imageLinks']['smallThumbnail']);
                             $('#btnRe').show();
@@ -87,8 +98,5 @@
             $('#contenedorIsbn').slideDown();
             $('.sinIsbn').slideUp();
         });
-
-
-
     </script>
 @endsection

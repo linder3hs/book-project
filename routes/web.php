@@ -22,4 +22,6 @@ Route::get('/home/configuracion','ConfiguracionController@index');
 Route::get('/home/perfil', 'PerfilController@index');
 Route::get('/home/edit/{id}', 'PerfilController@edit');
 Route::post('/home/perfil', 'PerfilController@update');
-Route::post('/home', 'HomeController@createBook')->middleware('auth');
+Route::post('/home/save', 'HomeController@createBook')->middleware('auth');
+Route::post('/home', 'HomeController@createBookByIsbn')->middleware('auth');
+Route::get('/home/lista', 'ListBookController@index');

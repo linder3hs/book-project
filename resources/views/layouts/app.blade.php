@@ -50,6 +50,7 @@
                             <li><a href="{{ url('/login') }}">Inciar Sesión</a></li>
                             <li><a href="{{ url('/register') }}">Registrate</a></li>
                         @else
+                            <li class="text-center text-danger"><a href="/home/lista">Mis Libros</a></li>
                             <li class="text-center text-danger"><a href="/home" class="text-danger">Home</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -59,7 +60,6 @@
                                 <ul class="dropdown-menu" role="menu">
 
                                     <li>
-                                       
                                         <a href="{{ url('/home/perfil') }}">
                                             Perfil
                                         </a>
