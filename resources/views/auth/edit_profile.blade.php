@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="/home/perfil" method="post">
+    <form action="/home/perfil" method="post" enctype="multipart/form-data" >
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="container">
             <p class="h3">Edita tu perfil</p>
@@ -28,6 +28,12 @@
                     <div class="col-md-6">
                         <input name="country" value="{{ ucfirst(Auth::user()->nacionalidad) }}" type="text" class="form-control" placeholder="Pais"><br>
                         <input name="department" value="{{ ucfirst(Auth::user()->provincia) }}" type="text" class="form-control" placeholder="Departamiento/Estado"><br>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-6">
+                        <label>Pon tu foto de perfil</label>
+                        <input type="file" name="profile" value="Foto">
                     </div>
                 </div>
                 <div class="form-group" align="center">

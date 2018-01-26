@@ -28,7 +28,7 @@
                         </div>
                         <div class="sinIsbn" style="display: none;">
                             <p>No se encontro el libro con el isbn que puso porfavor complete los datos.</p>
-                            <form action="/home/save" method="post" enctype="multipart/form-data" >
+                            <form action="/home/save" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input name="title" type="text" class="form-control" placeholder="Titulo del libro"><br>
                                 <input name="author" type="text" class="form-control" placeholder="Autor"><br>
