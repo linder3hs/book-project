@@ -9,7 +9,11 @@
                     <h4>Titulo: {{ $libro->title }}</h4>
                     <p>Autor: {{ $libro->author }}</p>
                     <p><span class="glyphicon glyphicon-calendar">&nbsp;</span>Año de publicación: &nbsp;{{ substr($libro->public_date,0) }}</p>
-                    <img src="{{ $libro->image }}" class="image-responsive" alt="">
+                    @if(strpos($libro->image, 'http') !== false)
+                    <img src="{{ $libro->image }}" class="image-responsive" alt="" style="width: 100px; height: 100px">
+                    @else
+                    <img src="/images/{{ $libro->image }}" class="image-responsive" alt="" style="width: 100px; height: 100px">
+                    @endif
                 </div>
             </div>
         @endif
