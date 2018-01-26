@@ -32,9 +32,12 @@ class PerfilController extends Controller
         $iuser->age = $request->input('age');
         $iuser->nacionalidad = $request->input('country');
         $iuser->provincia = $request->input('department');
+        $imagen = $request->file('profile');
+        $file = $request->file('profile')->getClientOriginalName();
+        \Storage::disk('images')->put($file, \File::get($imagen));
+        $iuser->avatar= $file;
         $iuser->save();
 
         return redirect('home/perfil');
-
     }
 }
