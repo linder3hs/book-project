@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class book_register extends Model
+class Publicaciones extends Model
 {
-
+    //
 }
