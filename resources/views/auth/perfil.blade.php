@@ -11,7 +11,7 @@
         </div>
 		<div class="">
 			<div class="col-md-3 col-xs-12 col-sm-3">
-				<img style="width: 50%" src="/images/{{ Auth::user()->avatar  }}" class="img-responsive img-rounded">
+				<img style="width: 50%" src="/images/{{ Auth::user()->avatar }}" class="img-responsive img-rounded">
 				<p>Nombre: &nbsp; <span>{{ Auth::user()->name . " " .Auth::user()->second_name }}</span></p>
 				<p>Apellido: &nbsp; <span>{{ Auth::user()->apellido }}</span> </p>
 				<p>E-mail: &nbsp; <span>{{ Auth::user()->email }}</span> </p>
