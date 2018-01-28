@@ -17,6 +17,7 @@ class PublishedController extends Controller
         $user = $request->user();
         $public = new Publicaciones();
         $public->user_id = $user->id;
+        $public->name = $user->name;
         $public->publicaciones = $request->input('public');
         $public->save();
         return redirect('/home/publicaciones');
