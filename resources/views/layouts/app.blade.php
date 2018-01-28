@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/bootstrap.css">
+
+    <!-- Bootstrap Core CSS -->
+    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="/css/stylish-portfolio.min.css" rel="stylesheet">
+
     <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.js"></script>
     <script src="/js/book.js"></script>
 
 
@@ -24,68 +36,58 @@
     <link rel="shortcut icon" type="image/png" href="/agenda.png"/>
 
 </head>
-<body>
-    <div id="app">
-        <nav class="navbar navbar-inverse navbar-default navbar-static-top">
-            <div class="container">
-                <div class="navbar-header">
 
-                    <!-- Collapsed Hamburger -->
-                    <button type="button" class="navbar-toggle collapsed btn btn-primary glyphicon glyphicon-th-list" data-toggle="collapse" data-target="#app-navbar-collapse">
-                        <span class="sr-only">Menu</span>
-                    </button>
+<body id="page-top">
+<!-- Navigation -->
+<a class="menu-toggle rounded" href="#">
+    <i class="fa fa-bars"></i>
+</a>
+<nav id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+        @if (Auth::guest())
+        <li class="sidebar-brand">
+            <a href="{{ url('/login') }}">Inciar Sesión</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a href="{{ url('/register') }}">Registrate</a>
+        </li>
+        @else
+        <li class="sidebar-nav-item">
+            <a href="/home">Home</a>
+        </li>
+        <li class="sidebar-nav-item">
+                <a href="/home/lista">Mis Libros</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a href="/home/publicaciones">Publicaciones</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a href="{{ url('/home/perfil') }}">Perfil</a>
+        </li>
+        <li class="sidebar-nav-item">
+            <a href="{{ url('/logout') }}"
+               onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">
+                Salir
+            </a>
+        </li>
+        @endif
+    </ul>
+</nav>
 
-                    <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        Book
-                    </a>
-                </div>
 
-                <div class="collapse navbar-collapse" id="app-navbar-collapse">
-                    <!-- Left Side Of Navbar -->
-                    <!-- Right Side Of Navbar -->
-                    <ul class="nav navbar-nav navbar-right">
-                        <!-- Authentication Links -->
-                        @if (Auth::guest())
-                            <li><a href="{{ url('/login') }}">Inciar Sesión</a></li>
-                            <li><a href="{{ url('/register') }}">Registrate</a></li>
-                        @else
-                            <li class="text-center text-danger"><a href="/home/lista">Mis Libros</a></li>
-                            <li class="text-center text-danger"><a href="/home/publicaciones">Publicaciones</a></li>
-                            <li class="text-center text-danger"><a href="/home" class="text-danger">Home</a></li>
-                            <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-                                    {{ Auth::user()->name }} <span class="caret"></span>
-                                </a>
+<!-- Bootstrap core JavaScript -->
+<script src="/vendor/jquery/jquery.min.js"></script>
+<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-                                <ul class="dropdown-menu" role="menu">
+<!-- Plugin JavaScript -->
+<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-                                    <li>
-                                        <a href="{{ url('/home/perfil') }}">
-                                            Perfil
-                                        </a>
-                                         <a href="{{ url('/logout') }}"
-                                            onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                            Salir
-                                        </a>
+<!-- Custom scripts for this template -->
+<script src="/js/stylish-portfolio.min.js"></script>
 
-                                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                                            {{ csrf_field() }}
-                                        </form>
-                                    </li>
-                                </ul>
-                            </li>
-                        @endif
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-        @yield('content')
-    </div>
-
-    <!-- Scripts -->
-    <!--script src="/js/app.js"></script-->
+@yield('content')
 </body>
+
 </html>
+

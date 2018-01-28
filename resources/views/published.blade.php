@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container col-lg-4 col-md-offset-4">
         <div class="form-group">
@@ -10,13 +9,17 @@
                 <input type="submit" value="Publicar" class="btn btn-success">
             </form>
         </div>
-    <h5>Otras Publicaciones</h5>
     </div>
     <div class="container col-lg-4 col-md-offset-4">
-        <div class="form-group">
-            @foreach($publics as $public)
-                <p>{{ $public->publicaciones }}</p>
-            @endforeach
-        </div>
+        @foreach($publics as $public)
+            <div class="container-fluid" style="border: 1px solid #d4d4d4; border-radius: 4px;">
+                <div class="form-group">
+                    <p>{{ $public->name }}</p>
+                    <p>{{ $public->publicaciones }}</p>
+                </div>
+                <input type="text" class="form-control"> <br>
+            </div>
+            <br>
+        @endforeach
     </div>
 @endsection
