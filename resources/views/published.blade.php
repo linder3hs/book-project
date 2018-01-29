@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('content')
-    <div class="container col-lg-4 col-md-offset-4">
+    <br><br>
+    <div class="container col-lg-5 col-md-offset-5">
         <div class="form-group">
             <h5>Tus publicaciones</h5>
             <form action="/home/publicaciones" method="post">
@@ -10,7 +11,7 @@
             </form>
         </div>
     </div>
-    <div class="container col-lg-4 col-md-offset-4">
+    <div class="container col-lg-5 col-md-offset-5">
         @foreach($publics as $public)
             <div class="list-group">
                 <a class="list-group-item list-group-item-action flex-column align-items-start">
