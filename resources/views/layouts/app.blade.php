@@ -65,11 +65,18 @@
             <a href="{{ url('/home/perfil') }}">Perfil</a>
         </li>
         <li class="sidebar-nav-item">
+            <a href="{{ url('/home/perfil') }}">
+                Perfil
+            </a>
             <a href="{{ url('/logout') }}"
                onclick="event.preventDefault();
-               document.getElementById('logout-form').submit();">
+                                                     document.getElementById('logout-form').submit();">
                 Salir
             </a>
+
+            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                {{ csrf_field() }}
+            </form>
         </li>
         @endif
     </ul>
