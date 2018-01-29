@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreatePublicacionesTable extends Migration
+class CreateComemntsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,12 @@ class CreatePublicacionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('publicaciones', function (Blueprint $table) {
+        Schema::create('comemnts', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('user_id');
-            $table->foreign('user_id');
-            $table->string('publicaciones');
+            $table->integer('pub_id')->unsigned();
+            $table->foreign('pub_id')->references('id')->on('publicaciones');
+            $table->string('comentario');
             $table->timestamps();
-
-
         });
     }
 
@@ -31,6 +29,6 @@ class CreatePublicacionesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('publicaciones');
+        Schema::dropIfExists('comemnts');
     }
 }
