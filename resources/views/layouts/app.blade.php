@@ -65,9 +65,6 @@
             <a href="{{ url('/home/perfil') }}">Perfil</a>
         </li>
         <li class="sidebar-nav-item">
-            <a href="{{ url('/home/perfil') }}">
-                Perfil
-            </a>
             <a href="{{ url('/logout') }}"
                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
