@@ -9,7 +9,7 @@ use App\Comemnts;
 class PublishedController extends Controller
 {
     public function index() {
-        $publics = Publicaciones::all();
+        $publics = Publicaciones::orderBy('id', 'desc')->get();
         $comentarios = Comemnts::all();
         return view('published', compact('publics', 'comentarios'));
     }
