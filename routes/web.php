@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 
 Auth::routes();
-
 Route::get('/home', 'HomeController@index');
 Route::get('/home/configuracion','ConfiguracionController@index');
 Route::get('/home/perfil', 'PerfilController@index');
@@ -27,4 +26,4 @@ Route::post('/home', 'HomeController@createBookByIsbn')->middleware('auth');
 Route::get('/home/lista', 'ListBookController@index');
 Route::get('/home/publicaciones', 'PublishedController@index');
 Route::post('/home/publicaciones', 'PublishedController@storage');
-Route::post('/home', 'PublishedController@comment');
+Route::post('/home/comment', 'PublishedController@comment');
