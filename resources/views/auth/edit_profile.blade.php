@@ -20,7 +20,7 @@
                 </div>
                 <div class="form-group">
                     <div class="col-md-6">
-                        <input name="date_born" type="text" value="{{ Auth::user()->fechadeNacimiento }}" class="form-control" placeholder="Fecha de Nacimiendo"><br>
+                        <input name="date_born" type="date" value="{{ Auth::user()->fechadeNacimiento }}" class="form-control" placeholder="Fecha de Nacimiendo"><br>
                         <input name="age" type="text" value="{{ Auth::user()->age  }}" class="form-control" placeholder="Edad"><br>
                     </div>
                 </div>
