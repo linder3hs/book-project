@@ -9,7 +9,7 @@
 				<a href="/home/edit/{{ Auth::user()->id}}" class="btn btn-outline-primary" role="button" aria-pressed="true">Actualizar</a>
 				<br>
 			</div>
-			<div class="col-sm-2"><a href="/users" class="pull-right"><img title="profile image" class="rounded img-thumbnail" src="/images/{{ Auth::user()->avatar }}"></a></div>
+			<div class="col-sm-2"><a href="/home/perfil" class="pull-right"><img title="profile image" class="rounded img-thumbnail" src="/images/{{ Auth::user()->avatar }}"></a></div>
 		</div>
 		<div class="row">
 			<div class="col-sm-3">

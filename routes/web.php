@@ -27,3 +27,4 @@ Route::get('/home/lista', 'ListBookController@index');
 Route::get('/home/publicaciones', 'PublishedController@index');
 Route::post('/home/publicaciones', 'PublishedController@storage');
 Route::post('/home/comment', 'PublishedController@comment');
+Route::get('/home/preguntas','PreguntasController@index');

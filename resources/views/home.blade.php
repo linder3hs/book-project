@@ -2,16 +2,14 @@
 @section('content')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Menu</div>
-
-                <div class="panel-body">
-                    Bienvenido a Book
-                    <div class="container-fluid">
-                        <div id="contenedorIsbn">
-                                <input name="isbnbook" type="number" class="form-control" id="numberIsbn" placeholder="Ingrese un ISBN">
+    <div align="center" style="margin: 10px; margin-top: 40px;">
+        <div class="col-md-8">
+            <div align="center">
+                <div class="card">
+                    <span style="margin: 12px;">Registra un libro y certificate ya!!!.</span>
+                    <div class="card-block">
+                        <div id="contenedorIsbn" style="margin: 6px;">
+                                <input name="isbnbook" type="number" class="form-control card-text" id="numberIsbn" placeholder="Ingrese un ISBN">
                                 <br>
                                 <input type="button" class="btn btn-sm btn-success btnBuscar" value="Buscar">
                                 <div id="content"></div>

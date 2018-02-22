@@ -20,6 +20,9 @@
                             @endif
                         </div>
                     </a>
+                    <div class="list-group-item" align="center">
+                        <a href="/home/preguntas" class="btn">CERTIFICAR</a>
+                    </div>
                 </div>
                 <br>
 

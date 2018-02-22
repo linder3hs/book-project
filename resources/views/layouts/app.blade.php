@@ -38,48 +38,76 @@
 </head>
 
 <body id="page-top">
-<!-- Navigation -->
-<a class="menu-toggle rounded" href="#">
-    <i class="fa fa-bars"></i>
-</a>
-<nav id="sidebar-wrapper">
-    <ul class="sidebar-nav">
-        @if (Auth::guest())
-        <li class="sidebar-brand">
-            <a href="{{ url('/login') }}">Inciar Sesión</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a href="{{ url('/register') }}">Registrate</a>
-        </li>
-        @else
-        <li class="sidebar-nav-item">
-            <a href="/home">Home</a>
-        </li>
-        <li class="sidebar-nav-item">
-                <a href="/home/lista">Mis Libros</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a href="/home/publicaciones">Publicaciones</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a href="{{ url('/home/perfil') }}">Perfil</a>
-        </li>
-        <li class="sidebar-nav-item">
-            <a href="{{ url('/logout') }}"
-               onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                Salir
-            </a>
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #009688;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 
-            <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        </li>
-        @endif
-    </ul>
+    <!-- Brand -->
+    <a class="navbar-brand" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Antu_scuolabook.svg/120px-Antu_scuolabook.svg.png" alt="" style="height: 60px; width: 60px;"></a>
+    <!-- Links -->
+    <div class="collapse navbar-collapse" id="nav-content">
+        <ul class="navbar-nav">
+            @if (Auth::guest())
+                <li class="nav-item active" style="color: #000000 !important;">
+                    <a style="color: #FFFFFF !important;" href="{{ url('/login') }}">Inciar Sesión &nbsp;&nbsp;&nbsp;</a>
+                </li>
+                <li class="nav-item" style="color: #000000 !important;">
+                    <a style="color: #FFFFFF !important;" href="{{ url('/register') }}">Registrate &nbsp;&nbsp;&nbsp;</a>
+                </li>
+            @else
+                <li class="nav-item" style="color: #000000 !important;">
+                    <a style="color: #FFFFFF !important;" href="/home/publicaciones">Inicio &nbsp;&nbsp;&nbsp;</a>
+                </li>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
+                        Logro
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="">
+                        <a class="dropdown-item" href="#">Libros Acreditados</a>
+                        <a class="dropdown-item" href="#">Acreditaciones</a>
+                    </div>
+                </div>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
+                        Meta
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                        <a class="dropdown-item" href="/home">Registro de Libros</a>
+                        <a class="dropdown-item" href="home/lista">Postulación</a>
+                        <a class="dropdown-item" href="#">Certificación</a>
+                        <a class="dropdown-item" href="#">Acreditación</a>
+                    </div>
+                </div>
+                <li class="nav-item" style="color: #000000 !important;">
+                    <a style="color: #FFFFFF !important;" href="/home">Seguir &nbsp;&nbsp;&nbsp;</a>
+                </li>
+                <li class="nav-item" style="color: #000000 !important;">
+                    <a style="color: #FFFFFF !important;" href="/home">Red &nbsp;&nbsp;&nbsp;</a>
+                </li>
+                <li class="nav-item" style="color: #000000 !important;">
+                    <a style="color: #FFFFFF !important;" href="/home">Ayuda &nbsp;&nbsp;&nbsp;</a>
+                </li>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
+                        Perfil
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="">
+                        <a class="dropdown-item" href="{{ url('/home/perfil') }}">Yo</a>
+                        <a class="dropdown-item" href="{{ url('/logout') }}"
+                           onclick="event.preventDefault();
+                                                    document.getElementById('logout-form').submit();">
+                            Salir &nbsp;&nbsp;&nbsp;
+                        </a>
+                        <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
+                            {{ csrf_field() }}
+                        </form>
+                    </div>
+                </div>
+            @endif
+        </ul>
+    </div>
 </nav>
-
-
 <!-- Bootstrap core JavaScript -->
 <script src="/vendor/jquery/jquery.min.js"></script>
 <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
