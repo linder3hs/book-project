@@ -74,7 +74,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="/home">Registro de Libros</a>
-                        <a class="dropdown-item" href="home/lista">Postulación</a>
+                        <a class="dropdown-item" href="/lista">Postulación</a>
                         <a class="dropdown-item" href="#">Certificación</a>
                         <a class="dropdown-item" href="#">Acreditación</a>
                     </div>
