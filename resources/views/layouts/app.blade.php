@@ -44,7 +44,7 @@
     </button>
 
     <!-- Brand -->
-    <a class="navbar-brand" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Antu_scuolabook.svg/120px-Antu_scuolabook.svg.png" alt="" style="height: 60px; width: 60px;"></a>
+    <a class="navbar-brand" href="{{ url('/home/publicaciones') }}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Antu_scuolabook.svg/120px-Antu_scuolabook.svg.png" alt="" style="height: 60px; width: 60px;"></a>
     <!-- Links -->
     <div class="collapse navbar-collapse" id="nav-content">
         <ul class="navbar-nav">
@@ -123,6 +123,37 @@
 
 @yield('content')
 </body>
+<!--Footer-->
+<footer class="page-footer font-small blue pt-4 mt-4" style="background-color: #117ab1;">
 
+    <!--Footer Links-->
+    <div class="container-fluid text-center text-md-left">
+        <div class="row">
+
+            <!--First column-->
+            <div style="color: white;" class="col-md-12" align="center">
+                <h5 class="text-uppercase">El Gran Lector</h5>
+                <p>Es una red donde podra compartir, certificarte y cononcer a personas que le gusta leer</p>
+            </div>
+            <!--/.First column-->
+
+            <!--Second column-->
+            <!--/.Second column-->
+        </div>
+    </div>
+    <!--/.Footer Links-->
+
+    <!--Copyright-->
+    <div style="color: white;" class="footer-copyright py-3 text-center">
+        <div class="container-fluid">
+            © 2018 Copyright El Gran Lector
+
+        </div>
+    </div>
+    <!--/.Copyright-->
+
+</footer>
+<!--/.Footer-->
 </html>
+
 
