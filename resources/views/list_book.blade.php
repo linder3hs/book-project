@@ -21,7 +21,7 @@
                         </div>
                     </a>
                     <div class="list-group-item" align="center">
-                        <a href="/home/preguntas" class="btn">CERTIFICAR</a>
+                        <a href="/home/preguntas" class="btn" style="border-color: #000000;">CERTIFICAR</a>
                     </div>
                 </div>
                 <br>

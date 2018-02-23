@@ -56,6 +56,9 @@
                     <a style="color: #FFFFFF !important;" href="{{ url('/register') }}">Registrate &nbsp;&nbsp;&nbsp;</a>
                 </li>
             @else
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+                </form>
                 <li class="nav-item" style="color: #000000 !important;">
                     <a style="color: #FFFFFF !important;" href="/home/publicaciones">Inicio &nbsp;&nbsp;&nbsp;</a>
                 </li>
