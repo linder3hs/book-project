@@ -14,4 +14,7 @@
         </div>
         <span style="color: white;">{{ $con++ }}</span>
     @endforeach
+    <div class="form-group" align="center" style="padding-bottom: 20px; margin-bottom: 20px;">
+        <a style="border-color: #000000;" class="btn btn-sm" href="{{ url('/home/respuestas') }}">Enviar respuestas</a>
+    </div>
 @endsection
