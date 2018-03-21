@@ -8,18 +8,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap Core CSS -->
-    <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
-    <link href="/vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet">
+    <link href="{{ asset('/vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="/css/stylish-portfolio.min.css" rel="stylesheet">
+    <link href="{{ asset('/css/stylish-portfolio.min.css" rel="stylesheet') }}">
 
-    <script src="/js/jquery.js"></script>
-    <script src="/js/book.js"></script>
+    <script src="{{ asset('/js/jquery.js') }}"></script>
+    <script src="{{ asset('/js/book.js') }}"></script>
 
 
 
@@ -33,7 +33,7 @@
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
-    <link rel="shortcut icon" type="image/png" href="/agenda.png"/>
+    <link rel="shortcut icon" type="image/png" href="{{ url('/agenda.png') }}" />
 
 </head>
 
@@ -60,15 +60,15 @@
                     <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
                 </form>
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important;" href="/home/publicaciones">Inicio &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important;" href="{{ url('/home/publicaciones') }}">Inicio &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
                         Logro
                     </a>
                     <div class="dropdown-menu" aria-labelledby="">
-                        <a class="dropdown-item" href="#">Libros Acreditados</a>
-                        <a class="dropdown-item" href="#">Acreditaciones</a>
+                        <a class="dropdown-item" href="{{ url('#') }}">Libros Acreditados</a>
+                        <a class="dropdown-item" href="{{ url('#') }}">Acreditaciones</a>
                     </div>
                 </div>
                 <div class="dropdown">
@@ -112,14 +112,14 @@
     </div>
 </nav>
 <!-- Bootstrap core JavaScript -->
-<script src="/vendor/jquery/jquery.min.js"></script>
-<script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="{{ asset('/vendor/jquery/jquery.min.js') }}"></script>
+<script src="{{ asset('/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
 <!-- Plugin JavaScript -->
-<script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+<script src="{{ asset('/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 
 <!-- Custom scripts for this template -->
-<script src="/js/stylish-portfolio.min.js"></script>
+<script src="{{ asset('/js/stylish-portfolio.min.js') }}"></script>
 
 @yield('content')
 </body>

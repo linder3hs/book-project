@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <form action="/home/perfil" method="post" enctype="multipart/form-data" >
+    <form action="{{url('/home/perfil')}}" method="post" enctype="multipart/form-data" >
         <input type="hidden" name="_token" value="{{ csrf_token() }}">
         <div class="container">
             <p class="h3">Edita tu perfil</p>

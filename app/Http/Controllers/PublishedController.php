@@ -30,7 +30,7 @@ class PublishedController extends Controller
         $comentario->pub_id = $request->input('idpu');
         $comentario->save();
 
-        return redirect('/home/linder');
+        return redirect('/home/publicaciones');
     }
 
 

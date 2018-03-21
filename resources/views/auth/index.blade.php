@@ -27,47 +27,6 @@
   </section>
 
   <!-- Services -->
-  <section class="content-section bg-primary text-white text-center" id="services">
-    <div class="container">
-      <div class="content-section-heading">
-        <h3 class="text-secondary mb-0">Redes Sociales</h3>
-      </div>
-      <div class="row">
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-social-facebook"></i>
-            </span>
-          <h4>
-            <strong>Facebook</strong>
-          </h4>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-lg-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-social-youtube"></i>
-            </span>
-          <h4>
-            <strong>Youtube</strong>
-          </h4>
-        </div>
-        <div class="col-lg-3 col-md-6 mb-5 mb-md-0">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-social-instagram"></i>
-            </span>
-          <h4>
-            <strong>Instagram</strong>
-          </h4>
-        </div>
-        <div class="col-lg-3 col-md-6">
-            <span class="service-icon rounded-circle mx-auto mb-3">
-              <i class="icon-social-linkedin"></i>
-            </span>
-          <h4>
-            <strong>Linkedin</strong>
-          </h4>
-        </div>
-      </div>
-    </div>
-  </section>
   <footer class="footer text-center">
     <div class="container">
       <p class="text-muted small mb-0">Copyright &copy; El Gran lector 2018</p>

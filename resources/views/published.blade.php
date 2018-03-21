@@ -4,7 +4,7 @@
     <div class="container col-lg-5 col-md-offset-5">
         <div class="form-group">
             <h5>Tus publicaciones</h5>
-            <form action="/home/publicaciones" method="post">
+            <form action="{{ url('/home/publicaciones') }}" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="text" name="public" class="form-control" style="height: 150px;"><br>
                 <input type="submit" value="Publicar" class="btn btn-success">
@@ -32,7 +32,7 @@
                 @endforeach
                 <ul class="list-group">
                     <li class="list-group-item">
-                        <form action="/home" method="post">
+                        <form action="{{ url('/home/comment') }}" method="post">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" name="idpu" value="{{ $public->id }}">
                             <input type="text" name="comentario" class="form-control" style="height: 35px;">
