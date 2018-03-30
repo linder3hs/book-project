@@ -21,8 +21,6 @@
     <script src="{{ asset('/js/jquery.js') }}"></script>
     <script src="{{ asset('/js/book.js') }}"></script>
 
-
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -38,7 +36,7 @@
 </head>
 
 <body id="page-top">
-<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #009688;">
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #16B166;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -50,24 +48,19 @@
         <ul class="navbar-nav">
             @if (Auth::guest())
                 <li class="nav-item active" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important;" href="{{ url('/login') }}">Inciar Sesión &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/login') }}">Inciar Sesión &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important;" href="{{ url('/register') }}">Registrate &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/register') }}">Registrate &nbsp;&nbsp;&nbsp;</a>
                 </li>
             @else
-                <form class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
-                </form>
-                <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important;" href="{{ url('/home/publicaciones') }}">Inicio &nbsp;&nbsp;&nbsp;</a>
-                </li>
+                
                 <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
                         Logro
                     </a>
                     <div class="dropdown-menu" aria-labelledby="">
-                        <a class="dropdown-item" href="{{ url('#') }}">Libros Acreditados</a>
+                        <a class="dropdown-item" href="{{ url('#') }}">Certificaciones</a>
                         <a class="dropdown-item" href="{{ url('#') }}">Acreditaciones</a>
                     </div>
                 </div>
@@ -76,20 +69,20 @@
                         Meta
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                        <a class="dropdown-item" href="/home">Registro de Libros</a>
+                        <a class="dropdown-item" href="{{ url('/home') }}">Registro de Libros</a>
                         <a class="dropdown-item" href="{{ url('/home/lista') }}">Postulación</a>
                         <a class="dropdown-item" href="#">Certificación</a>
                         <a class="dropdown-item" href="#">Acreditación</a>
                     </div>
                 </div>
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important;" href="/home">Seguir &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="/home">Seguir &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important;" href="/home">Red &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="/home">Red &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important;" href="/home">Ayuda &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="/home">Ayuda &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
@@ -124,36 +117,59 @@
 @yield('content')
 </body>
 <!--Footer-->
-<footer class="page-footer font-small blue pt-4 mt-4" style="background-color: #117ab1;">
+<footer class="page-footer font-small indigo pt-0" style="background-color: #117ab1; color: white;">
 
     <!--Footer Links-->
-    <div class="container-fluid text-center text-md-left">
-        <div class="row">
+    <div class="container">
+
+        <!--First row-->
+        <div class="row" align="center">
 
             <!--First column-->
-            <div style="color: white;" class="col-md-12" align="center">
-                <h5 class="text-uppercase">El Gran Lector</h5>
-                <p>Es una red donde podra compartir, certificarte y cononcer a personas que le gusta leer</p>
-            </div>
-            <!--/.First column-->
+            <div class="col-md-12 py-5">
 
-            <!--Second column-->
-            <!--/.Second column-->
+                <div class="mb-5 flex-center">
+
+                    <!--Facebook-->
+                    <a class="fb-ic">
+                        <i class="fa fa-facebook fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!--Twitter-->
+                    <a class="tw-ic">
+                        <i class="fa fa-twitter fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!--Google +-->
+                    <a class="gplus-ic">
+                        <i class="fa fa-google-plus fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!--Linkedin-->
+                    <a class="li-ic">
+                        <i class="fa fa-linkedin fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!--Instagram-->
+                    <a class="ins-ic">
+                        <i class="fa fa-instagram fa-lg white-text mr-md-5 mr-3 fa-2x"> </i>
+                    </a>
+                    <!--Pinterest-->
+                    <a class="pin-ic">
+                        <i class="fa fa-pinterest fa-lg white-text fa-2x"> </i>
+                    </a>
+                </div>
+            </div>
+            <!--/First column-->
         </div>
+        <!--/First row-->
     </div>
-    <!--/.Footer Links-->
+    <!--/Footer Links-->
 
     <!--Copyright-->
-    <div style="color: white;" class="footer-copyright py-3 text-center">
-        <div class="container-fluid">
-            © 2018 Copyright El Gran Lector
-
-        </div>
-    </div>
-    <!--/.Copyright-->
+    <div class="footer-copyright py-3 text-center">
+        © 2018 Copyright<div>
+    <!--/Copyright-->
 
 </footer>
-<!--/.Footer-->
+<!--/Footer-->
+                    
 </html>
 
 

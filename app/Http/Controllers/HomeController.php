@@ -56,5 +56,9 @@ class HomeController extends Controller
 
     }
 
+    public function searchScope($query, $s) {
+        return $query->where('name', 'like', '%' . $s . '%')->orWhere('apellido' , 'like' , '%' . $s . '%');
+    }
+
 
 }

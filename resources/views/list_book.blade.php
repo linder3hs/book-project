@@ -2,6 +2,10 @@
 @section('content')
     <br><br>
     <div class="container">
+    <form action="{{ url('searchlist') }}" method="get" class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+                    <button class="btn btn-primary" type="submit">Search</button>
+                </form>
     <h3>Lista de mis libros</h3>
     @foreach($libros as $libro)
         @if( $libro->user_id == Auth::user()->id)
@@ -21,7 +25,7 @@
                         </div>
                     </a>
                     <div class="list-group-item" align="center">
-                        <a href="/home/preguntas" class="btn" style="border-color: #000000;">CERTIFICAR</a>
+                        <a href="{{url ('/home/preguntas')}}" class="btn" style="border-color: #000000;">CERTIFICAR</a>
                     </div>
                 </div>
                 <br>

@@ -5,9 +5,11 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
-class User extends Authenticatable
+class Admin extends Authenticatable
 {
     use Notifiable;
+
+    protected $guard = 'admin';
 
     /**
      * The attributes that are mass assignable.
@@ -15,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'apellido','nacionalidad', 'avatar','email', 'password',
+        'name', 'email', 'password',
     ];
 
     /**
@@ -44,12 +46,5 @@ class User extends Authenticatable
 
     public function isAdmin() {
         return $this->admin();
-    }
-    
-    public function scopeName($query, $name) {
-        //dd('scope ' . $name);
-        if (!empty($name)) {
-            $query->where('name', $name)->orwhere('email', $name);
-        }
     }
 }

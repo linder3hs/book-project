@@ -30,3 +30,8 @@ Route::post('/home/comment', 'PublishedController@comment');
 Route::get('/home/preguntas','PreguntasController@index');
 Route::get('/home/respuestas','RespuestaController@index');
 Route::get('/admin', 'AdminController@index');
+Route::get('/admin/preguntas', 'AdminController@preguntas');
+
+Route::get('protected', ['middleware' => ['auth', 'admin'], function() {
+    return "this page requires that you be logged in and an Admin";
+}]);

@@ -4,6 +4,7 @@
   <!-- Header -->
   <header class="masthead d-flex">
     <div class="container text-center my-auto">
+    <br>
       <h1 class="mb-1">El Gran lector</h1>
       <h3 class="mb-5">
         <em>la red más grande de lectores</em>
@@ -12,7 +13,7 @@
     </div>
     <div class="overlay"></div>
   </header>
-
+<br><br>
   <!-- About -->
   <section class="content-section bg-light" id="about">
     <div class="container text-center">
@@ -24,12 +25,6 @@
         </div>
       </div>
     </div>
+    <br><br>
   </section>
-
-  <!-- Services -->
-  <footer class="footer text-center">
-    <div class="container">
-      <p class="text-muted small mb-0">Copyright &copy; El Gran lector 2018</p>
-    </div>
-  </footer>
 @endsection

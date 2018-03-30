@@ -14,7 +14,7 @@
                                 <input type="button" class="btn btn-sm btn-success btnBuscar" value="Buscar">
                                 <div id="content"></div>
                                 <img id="image" alt="">
-                            <form action="/home" method="post">
+                            <form action="{{url('/home')}}" method="post">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input type="hidden" id="titlere" name="titlere">
                                 <input type="hidden" id="autorre" name="autorre">
@@ -26,7 +26,7 @@
                         </div>
                         <div class="sinIsbn" style="display: none;">
                             <p>No se encontro el libro con el isbn que puso porfavor complete los datos.</p>
-                            <form action="/home/save" method="post" enctype="multipart/form-data">
+                            <form action="{{ url('/home/save')}}" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                 <input name="title" type="text" class="form-control" placeholder="Titulo del libro"><br>
                                 <input name="author" type="text" class="form-control" placeholder="Autor"><br>
@@ -42,6 +42,7 @@
         </div>
     </div>
 </div>
+<br><br><br><br><br>
     <script>
         // Ajax para buscar libros por isbn
 

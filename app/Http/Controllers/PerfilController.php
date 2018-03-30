@@ -13,8 +13,15 @@ class PerfilController extends Controller
     }
 
 
-    public function index() {
-    	return view('auth.perfil');
+    public function index(Request $request) {
+        $nombre = ($request->get('buscador'));
+        //$users = User::name($request->get('buscador'));
+        $users = User::name($nombre)->orderby('id', 'DESC')->paginate();
+        $user = array('users' => $users);
+    	return view('auth.perfil', $user);
+    }
+    public function search() {
+
     }
 
     public function edit() {
@@ -40,4 +47,5 @@ class PerfilController extends Controller
 
         return redirect('home/perfil');
     }
+
 }
