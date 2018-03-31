@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Admin;
+use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class AdminController extends Controller {
         ]);
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
            // echo ("Correcto master");
-            return redirect('admin/preguntas');
+            return redirect('admin/usuarios');
             //return redirect()->intended(route('admin.dashboard'));
 
         } else {
@@ -34,6 +35,12 @@ class AdminController extends Controller {
 
     public function preguntas() {
         return view('admin.addask');
+    }
+
+    public function listuser() {
+        $users = User::all();
+        $user = array('users' => $users);
+        return view('admin.listuser', $user);
     }
 
     /*public function loginadmin(Request $request) {

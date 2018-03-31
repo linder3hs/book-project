@@ -32,3 +32,4 @@ Route::get('/home/respuestas','RespuestaController@index');
 Route::get('/admin/login', 'AdminController@showLoginForm')->name('admin.login');
 Route::post('/admin/login', 'AdminController@login')->name('admin.login.submit');
 Route::get('/admin/preguntas', 'AdminController@preguntas')->name('admin.dashboard');
+Route::get('/admin/usuarios', 'AdminController@listuser');
