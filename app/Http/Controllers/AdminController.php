@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Admin;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller {
@@ -10,15 +11,43 @@ class AdminController extends Controller {
         $this->middleware('auth:admin');
     }
 
-    public function index() {
-        return view('admin.addask');
+    public function showLoginForm() {
+        return view('admin.loginadmin');
+    }
+
+    public function login(Request $request) {
+        $this->validate($request, [
+        'email' => 'required|email',
+        'password' => 'required|min:6'
+        ]);
+        if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
+           // echo ("Correcto master");
+            return redirect('admin/preguntas');
+            //return redirect()->intended(route('admin.dashboard'));
+
+        } else {
+            echo "Mal todo mal";
+
+        }
+       // return redirect()->back()->whitInput($request->only('email', 'remember'));
     }
 
     public function preguntas() {
         return view('admin.addask');
     }
 
-    public function loginadmin(Request $request) {
-        $this->validate($request, [ 'email' => 'required|email', 'password' => 'required']);
-    }
+    /*public function loginadmin(Request $request) {
+        $useradmin = $request->input('emailadmin');
+        $password = $request->input('passwordadmin');
+        $users = Admin::all();
+        foreach($users as $user) {
+            if ($user->email == $useradmin && $user->password == $password) {
+                return redirect('admin/preguntas');
+            } else {
+                echo "Datos incorrectos";
+                return redirect('admin');
+            }
+        }*/
+    
+        
 }
