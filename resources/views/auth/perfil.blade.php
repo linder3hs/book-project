@@ -12,10 +12,14 @@
 		<br>
 		<div style="background-color: #11ab70; padding: 10px; color: white;" >
 			<h3>Usuarios</h3>
-			@foreach($users as $user)
-			<p>{{$user->name . " " . $user->apellido}}</p>
-			<p>{{ $user->email }}</p>
-			@endforeach
+			<table class="table">
+				@foreach($users as $user)
+					<tr>
+						<td><p>{{$user->name . " " . $user->apellido}}</p></td>
+						<td><p>{{ $user->email }}</p></td>
+					</tr>
+				@endforeach
+			</table>
 		</div>
 		<hr>
 

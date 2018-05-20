@@ -27,7 +27,7 @@ class AdminController extends Controller {
             //return redirect()->intended(route('admin.dashboard'));
 
         } else {
-            echo "Mal todo mal";
+            return redirect('admin/login');
 
         }
        // return redirect()->back()->whitInput($request->only('email', 'remember'));
