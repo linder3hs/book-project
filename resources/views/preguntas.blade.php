@@ -7,14 +7,19 @@
     @foreach($preguntas as $pregunta)
         <div class="container">
             <span>{{ $con .") " .  $pregunta->pregunta }}</span><br>
-            <span><input type="checkbox">&nbsp;&nbsp;{{ $pregunta->respuestados }}</span><br>
-            <span><input type="checkbox">&nbsp;&nbsp;{{ $pregunta->respuestatres }}</span><br>
-            <span><input type="checkbox">&nbsp;&nbsp;{{ $pregunta->respuestacuatro }}</span><br>
-            <span><input type="checkbox">&nbsp;&nbsp;{{ $pregunta->respuestacorrecta }}</span><br><br>
         </div>
         <span style="color: white;">{{ $con++ }}</span>
     @endforeach
+    <div class="container">
+    @foreach($respuestas as $res)
+        <span><input type="checkbox">&nbsp;&nbsp;{{ $res->respuesta }}</span><br>
+    @endforeach
+    </div>
     <div class="form-group" align="center" style="padding-bottom: 20px; margin-bottom: 20px;">
         <a style="border-color: #000000;" class="btn btn-sm" href="{{ url('/home/respuestas') }}">Enviar respuestas</a>
     </div>
+    <br>
+    <br>
+    <br>
+    <br>
 @endsection

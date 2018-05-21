@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller {
 
-    public function __construct() {
+    /*public function __construct() {
         $this->middleware('auth:admin');
-    }
+    }*/
 
     public function showLoginForm() {
-        return view('admin.loginadmin');
+        return view('admin.login');
     }
 
     public function login(Request $request) {
@@ -39,8 +39,19 @@ class AdminController extends Controller {
 
     public function listuser() {
         $users = User::all();
-        $user = array('users' => $users);
-        return view('admin.listuser', $user);
+        $tipos = array('1' => 'Inscrito', '2' => 'Lector', '3' => 'Certificado', '4' => 'Acreditado', '5' => 'Debaja');
+        return view('admin.listuser')->with('users', $users)->with('tipos', $tipos);
+    }
+
+    public function updatenivel(Request $request) {
+        $user = $request->input('userid');
+        $nivel = $request->input('nivel');
+        $dbuser = new User();
+        $dbuser->exists = true;
+        $dbuser->id = $user;
+        $dbuser->nivel = $nivel;
+        $dbuser->save();
+        return redirect('admin/usuarios');
     }
 
     /*public function loginadmin(Request $request) {

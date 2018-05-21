@@ -84,6 +84,11 @@
                 <li class="nav-item" style="color: #000000 !important;">
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="/home">Ayuda &nbsp;&nbsp;&nbsp;</a>
                 </li>
+                @if(Auth::user()->nivel == 4)
+                <li class="nav-item" style="color: #000000 !important;">
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="/home/nuevaspreguntas">Añadir Preguntas &nbsp;&nbsp;&nbsp;</a>
+                </li>
+                @endif
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
                         Perfil

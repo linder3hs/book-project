@@ -33,3 +33,6 @@ Route::get('/admin/login', 'AdminController@showLoginForm')->name('admin.login')
 Route::post('/admin/login', 'AdminController@login')->name('admin.login.submit');
 Route::get('/admin/preguntas', 'AdminController@preguntas')->name('admin.dashboard');
 Route::get('/admin/usuarios', 'AdminController@listuser');
+Route::post('/admin/updatenivel', 'AdminController@updatenivel');
+Route::get('/home/nuevaspreguntas', 'NewPreguntas@index');
+Route::post('/home/createpregunta', 'NewPreguntas@newPregunta');

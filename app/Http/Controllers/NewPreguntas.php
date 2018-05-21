@@ -2,18 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Preguntas;
-use App\Respuestas;
 use Illuminate\Http\Request;
+use App\Respuestas;
+use App\Preguntas;
 
-class PreguntasController extends Controller {
+class NewPreguntas extends Controller {
 
     public function index() {
-        $preguntas = Preguntas::all();
-        $respuestas = Respuestas::all();
-        return view('preguntas')
-            ->with('preguntas', $preguntas)
-            ->with('respuestas', $respuestas);
+        return view('addpreguntas');
     }
 
     public function newPregunta(Request $request) {
@@ -23,6 +19,6 @@ class PreguntasController extends Controller {
         $ask->isbn = $isbn;
         $ask->pregunta = $pregunta;
         $ask->save();
+        return redirect('/home/nuevaspreguntas');
     }
-
 }
