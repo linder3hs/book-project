@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Respuestas;
 use App\Preguntas;
 
+//Probando
+
 class NewPreguntas extends Controller {
 
     public function index() {
