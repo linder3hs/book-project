@@ -14,10 +14,28 @@
                         <input placeholder="Ingrese una pregunta" type="text" class="form-control col-md-12" name="pregunta">
                     </div>
                     <div class="preguntitas"></div>
-                    <a id="btnAdd" class="btn btn-default" style="border-color: #000000;"> add </a>
-                    <br>
+                    <!--a id="btnAdd" class="btn btn-default" style="border-color: #000000;"> add </a-->
                     <div class="form-group">
-                        <br>
+                        <p>Ingrese las 4 respuestas de la pregunra</p>
+                        <div class="form-group">
+                            <p>Esta debera ser la respuesta correcta</p>
+                            <input class="form-control" type="text" name="r1" placeholder="Respuesta 1">
+                        </div>
+                        <div class="form-group">
+                            <p>Estas son respuestas incorrectas</p>
+                            <input class="form-control" type="text" name="r2" placeholder="Respuesta 2">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="r3" placeholder="Respuesta 3">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="r4" placeholder="Respuesta 4">
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="text" name="r5" placeholder="Respuesta 5">
+                        </div>
+                    </div>
+                    <div class="form-group">
                         <input type="submit" class="btn btn-default" style="border-color: #000000; background-color: #ffffff;" value="Guardar">
                     </div>
                 </form>
@@ -29,9 +47,4 @@
             });
         </script>
     </div>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
 @endsection

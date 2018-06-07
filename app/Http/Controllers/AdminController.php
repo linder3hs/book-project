@@ -39,7 +39,7 @@ class AdminController extends Controller {
 
     public function listuser() {
         $users = User::all();
-        $tipos = array('1' => 'Inscrito', '2' => 'Lector', '3' => 'Certificado', '4' => 'Acreditado', '5' => 'Debaja');
+        $tipos = array('1' => 'Inscrito', '2' => 'Lector', '3' => 'Certificador', '4' => 'Acreditador', '5' => 'Debaja');
         return view('admin.listuser')->with('users', $users)->with('tipos', $tipos);
     }
 
