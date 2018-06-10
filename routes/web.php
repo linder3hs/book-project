@@ -36,3 +36,6 @@ Route::get('/admin/usuarios', 'AdminController@listuser');
 Route::post('/admin/updatenivel', 'AdminController@updatenivel');
 Route::get('/home/nuevaspreguntas', 'NewPreguntas@index');
 Route::post('/home/createpregunta', 'NewPreguntas@newPregunta');
+
+Route::get('auth/facebook', 'Auth\RegisterController@redirectToProvider');
+Route::get('auth/facebook/callback', 'Auth\RegisterController@handleProviderCallback');

@@ -5,12 +5,13 @@ namespace App\Http\Controllers\Auth;
 use App\Mail\ConfirmationEmail;
 use App\User;
 use App\Http\Controllers\Controller;
+use Couchbase\Exception;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Auth\Events\Registered;
-
+use Socialite;
 class RegisterController extends Controller
 {
     /*
@@ -87,9 +88,36 @@ class RegisterController extends Controller
         return back()->with('status', 'Confirma tu cuente, Te hemos enviado un enlace a tu correo.');
     }
 
-    public function confirmEmail($token)
-    {
+    public function confirmEmail($token) {
         User::whereToken($token)->firstOrFail()->hasVerified();
         return redirect('login')->with('status', 'Gracias por conformar tu email, espera...');
+    }
+
+    public function redirectToProvider() {
+        return Socialite::driver('facebook')->redirect();
+    }
+
+    /**
+     * Obtain the user information from GitHub.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback() {
+        try {
+            $socialUser = Socialite::driver('facebook')->user();
+        } catch (Exception $e) {
+            return redirect('/');
+        }
+
+        $user = User::where('facebook_id', $socialUser->getId())->first();
+        if (!$user)
+            User::create([
+               'facebook_id' => $socialUser->getId(),
+               'name' => $socialUser->getName(),
+               'email' => $socialUser->getEmail(),
+            ]);
+
+        auth()->login($user);
+        return redirect()->to('/home');
     }
 }

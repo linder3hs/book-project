@@ -9,6 +9,7 @@
         "5dmatwebsearch/advancesearch": "dev-master",
         "fabpot/goutte": "^3.2",
         "laravel/framework": "5.3.*",
+        "laravel/socialite": "~2.0.0",
         "weidner/goutte": "^1.0"
     },
     "require-dev": {
