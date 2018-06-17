@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Admin;
+use App\book_register;
+use App\Certificaciones;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
@@ -52,6 +54,23 @@ class AdminController extends Controller {
         $dbuser->nivel = $nivel;
         $dbuser->save();
         return redirect('admin/usuarios');
+    }
+
+    public function certificacion() {
+        $certificaciones = Certificaciones::all();
+        return view('admin.certificacion')->with('certificaciones', $certificaciones);
+    }
+
+    public function aprobarCertificacion(Request $request) {
+        $idc = $request->input('idc');
+        $certificacion = Certificaciones::find($idc);
+        $certificacion->estado = 1;
+        $certificacion->save();
+        $idbook = $request->input('book_id');
+        $libro = book_register::find($idbook);
+        $libro->estado = 2;
+        $libro->save();
+        return redirect('/admin/certificacion');
     }
 
     /*public function loginadmin(Request $request) {

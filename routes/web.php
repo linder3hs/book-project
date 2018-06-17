@@ -39,3 +39,6 @@ Route::post('/home/createpregunta', 'NewPreguntas@newPregunta');
 
 Route::get('auth/facebook', 'Auth\RegisterController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\RegisterController@handleProviderCallback');
+Route::get('admin/certificacion', 'AdminController@certificacion');
+Route::post('admin/aprobarCertificacion', 'AdminController@aprobarCertificacion');
+Route::post('/home/solicitarExamen', 'ListBookController@solicitarCertificacion');

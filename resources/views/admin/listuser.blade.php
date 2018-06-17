@@ -2,14 +2,17 @@
 @section('content')
 <br><br>
     <div class="container-fluid">
-        <table class="table table-bordered">
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Correo</th>
-            <th>F. Nac</th>
-            <th>Nivel</th>
-            <th>Nacionalidad</th>
-
+        <table class="table table-striped table-responsive">
+           <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Correo</th>
+                    <th>F. Nac</th>
+                    <th>Nivel</th>
+                    <th>Nacionalidad</th>
+                </tr>
+           </thead>
             @foreach($users as $user)
                 @if($user->nivel == 1)
                     {{ $level = "Inscrito" }}
@@ -29,8 +32,8 @@
                     <td>{{ $user->fehcaNacimiento}}</td>
                     <td>
                         <form action="{{ url('admin/updatenivel') }}" method="post">
-                            <input type="hidden" value="{{ $user->id }}" name="userid">
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" value="{{ $user->id }}" name="userid">
                             <select name="nivel" id="">
                                 <option value="{{ $user->nivel }}">{{ $level }}</option>
                             @foreach($tipos as $key => $value)

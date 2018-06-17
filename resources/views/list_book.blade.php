@@ -3,9 +3,9 @@
     <br><br>
     <div class="container">
     <form action="{{ url('searchlist') }}" method="get" class="form-inline my-2 my-lg-0">
-                    <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
-                    <button class="btn btn-primary" type="submit">Search</button>
-                </form>
+        <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
+        <button class="btn btn-primary" type="submit">Search</button>
+    </form>
     <h3>Lista de mis libros</h3>
     @foreach($libros as $libro)
         @if( $libro->user_id == Auth::user()->id)
@@ -25,7 +25,20 @@
                         </div>
                     </a>
                     <div class="list-group-item" align="center">
-                        <a href="{{url ('/home/preguntas')}}" class="btn" style="border-color: #000000;">CERTIFICAR</a>
+                        @if($libro->estado == 0)
+                        <form action="{{ url('/home/solicitarExamen') }}" method="post">
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                            <input type="hidden" name="idbook" value="{{ $libro->id }}">
+                            <input name="libro" type="hidden" value="{{ $libro->title }}">
+                            <input name="isbn" type="hidden" value="{{ $libro->isbn }}">
+                            <input type="submit" class="btn" style="border-color: #000000;" value="CERTIFICAR">
+                        </form>
+                        @elseif($libro->estado == 1)
+                            <p>Esperando aprobacion...</p>
+                        @elseif($libro->estado == 2)
+                            <a href="" class="btn" style="border-color: #000000;" >Dar examen</a>
+                        @endif
+
                     </div>
                 </div>
                 <br>

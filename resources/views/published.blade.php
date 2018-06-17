@@ -1,6 +1,30 @@
 @extends('layouts.app')
 @section('content')
     <br><br>
+    <style type="text/css">
+        div#padre {
+            height:28px;
+            width:100%;
+        }
+        div#left {
+            float:left;
+            height:28px;
+            width:330px;
+            margin-right:25px;
+            margin-left: 10px;
+        }
+    </style>
+    <div id="padre">
+        <div id="left" class="card">
+            <div class="card-body" style="border: solid 1px black;">
+                <div align="center" style="margin-top: 10px">
+                    <img style="width: 100px; height: 100px;" src="{{url('/images/' . Auth::user()->avatar) }}" alt="" class="rounded-circle">
+                    <h4 style="margin-top: 20px;">{{ Auth::user()->name . " " .Auth::user()->apellido }}</h4>
+                    <p>Amor a los libros</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <div class="container col-lg-5 col-md-offset-5">
         <div class="form-group">
             <h5>Tus publicaciones</h5>

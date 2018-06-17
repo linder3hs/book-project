@@ -20,10 +20,7 @@ class PerfilController extends Controller
         $user = array('users' => $users);
     	return view('auth.perfil', $user);
     }
-    public function search() {
-
-    }
-
+    
     public function edit() {
 	     return view('auth.edit_profile');
     }

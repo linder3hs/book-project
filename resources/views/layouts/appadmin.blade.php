@@ -46,25 +46,19 @@
     <!-- Links -->
     <div class="collapse navbar-collapse" id="nav-content">
         <ul class="navbar-nav">
-            @if (Auth::guest())
-                <li class="nav-item active" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/login') }}">Inciar Sesión &nbsp;&nbsp;&nbsp;</a>
+                <li class="nav-item" style="color: #000000 !important;">
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/usuarios') }}">Usuarios &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/register') }}">Registrate &nbsp;&nbsp;&nbsp;</a>
-                </li>
-            @else
-                
-                <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/usuarios') }}}">Usuarios &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/preguntas') }}">Preguntas &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/preguntas') }}}">Preguntas &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/certificacion') }}">Certificaciones &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/') }}}">Ayuda &nbsp;&nbsp;&nbsp;</a>
                 </li>
-            @endif
+
         </ul>
     </div>
 </nav>

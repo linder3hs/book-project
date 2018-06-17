@@ -20,6 +20,7 @@
                                 <input type="hidden" id="autorre" name="autorre">
                                 <input type="hidden" id="anopure" name="anopure">
                                 <input type="hidden" id="imgre" name="imgre">
+                                <input type="hidden" id="isbn" name="isbn">
                                 <input id="btnRe" style="display: none;" type="submit" value="Registrar" class="btn btn-sm btn-primary">
                                 <button id="btnCancel" class="btn btn-sm btn-default" style="display: none;">Cancelar</button>
                             </form>
@@ -65,6 +66,7 @@
                             $('#titlere').val(data['items'][0]['volumeInfo']['title']);
                             $('#autorre').val(data['items'][0]['volumeInfo']['authors']);
                             $('#anopure').val(data['items'][0]['volumeInfo']['publishedDate']);
+                            $('#isbn').val(data['items'][0]['volumeInfo']['industryIdentifiers'][0]['identifier']);
                             $('#content').html('<h5>Titulo del libro: ' + data['items'][0]['volumeInfo']['title'] + '</h5>' + '<p>Autor:  ' + data['items'][0]['volumeInfo']['authors'] + '</p>' + '<p>Año de publicación:  ' + data['items'][0]['volumeInfo']['publishedDate'] + '</p>' + '<br>');
                             $('#image').attr('src', data['items']['0']['volumeInfo']['imageLinks']['smallThumbnail']);
                             $('#btnRe').show();

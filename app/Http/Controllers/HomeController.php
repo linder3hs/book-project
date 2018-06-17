@@ -31,6 +31,7 @@ class HomeController extends Controller
     public function createBook(Request $request) {
         $user = $request->user();
         $book = new book_register();
+        $book->isbn = $request->input('isbn');
         $book->title = $request->input('title');
         $book->author = $request->input('author');
         $book->public_date = $request->input('public-date');
@@ -46,14 +47,15 @@ class HomeController extends Controller
     public function createBookByIsbn(Request $request) {
         $user = $request->user();
         $book = new book_register();
+        $book->isbn = $request->input('isbn');
         $book->title = $request->input('titlere');
         $book->author = $request->input('autorre');
         $book->public_date = $request->input('anopure');
         $book->image = $request->input('imgre');
+        $book->estado = 0;
         $book->user_id = $user->id;
         $book->save();
         return redirect('home');
-
     }
 
     public function searchScope($query, $s) {

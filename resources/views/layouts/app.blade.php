@@ -27,7 +27,7 @@
     <title>Book</title>
     <!-- Scripts -->
     <script>
-        window.Laravel =<?php echo json_encode([
+        window.Laravel = <?php echo json_encode([
             'csrfToken' => csrf_token(),
         ]); ?>
     </script>
@@ -36,13 +36,10 @@
 </head>
 
 <body id="page-top">
-<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #16B166;">
+<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #000; color: #fff; height: 55px;">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-
-    <!-- Brand -->
-    <a class="navbar-brand" href="{{ url('/home/publicaciones') }}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Antu_scuolabook.svg/120px-Antu_scuolabook.svg.png" alt="" style="height: 60px; width: 60px;"></a>
     <!-- Links -->
     <div class="collapse navbar-collapse" id="nav-content">
         <ul class="navbar-nav">
@@ -70,8 +67,7 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{ url('/home') }}">Registro de Libros</a>
-                        <a class="dropdown-item" href="{{ url('/home/lista') }}">Postulación</a>
-                        <a class="dropdown-item" href="#">Certificación</a>
+                        <a class="dropdown-item" href="{{ url('/home/lista') }}">Certificación</a>
                         <a class="dropdown-item" href="#">Acreditación</a>
                     </div>
                 </div>
@@ -169,7 +165,8 @@
 
     <!--Copyright-->
     <div class="footer-copyright py-3 text-center">
-        © 2018 Copyright<div>
+        © 2018 Copyright
+    </div>
     <!--/Copyright-->
 
 </footer>
