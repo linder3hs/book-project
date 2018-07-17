@@ -1,4 +1,4 @@
-@extends('layouts.appadmin')
+@extends('layouts.app')
 @section('content')
     <div class="container">
         <div align="center" style="margin-top: 40px;">
