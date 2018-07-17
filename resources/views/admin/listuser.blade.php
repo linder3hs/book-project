@@ -1,11 +1,17 @@
 @extends('layouts.appadmin')
 @section('content')
 <br><br>
-    <div class="container-fluid">
+<style>
+    .table-responsive {
+        display: contents;
+    }
+</style>
+<div align="center" style="width: 100%; display: contents">
+    <div class="container-fluid center-block">
         <table class="table table-striped table-responsive">
            <thead>
                 <tr>
-                    <th>Nombre</th>
+                    <th style="width: 10%;">Nombre</th>
                     <th>Apellido</th>
                     <th>Correo</th>
                     <th>F. Nac</th>
@@ -48,6 +54,7 @@
             @endforeach
         </table>
     </div>
+</div>
 
     <br>
     <br>

@@ -7,6 +7,7 @@ use App\Certificaciones;
 use App\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class AdminController extends Controller {
 
@@ -57,7 +58,10 @@ class AdminController extends Controller {
     }
 
     public function certificacion() {
-        $certificaciones = Certificaciones::all();
+        $certificaciones = DB::table('certificaciones')
+                            ->join('users', 'users.id', '=', 'certificaciones.user_id')
+                            ->select('users.*', 'certificaciones.*')
+                            ->get();
         return view('admin.certificacion')->with('certificaciones', $certificaciones);
     }
 

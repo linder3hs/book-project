@@ -82,7 +82,7 @@
                 </li>
                 @if(Auth::user()->nivel == 4)
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="/home/nuevaspreguntas">Añadir Preguntas &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/home/nuevaspreguntas') }}">Añadir Preguntas &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 @endif
                 <div class="dropdown">
