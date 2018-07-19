@@ -32,7 +32,6 @@
                             <p>No se encontro el libro con el isbn que puso porfavor complete los datos.</p>
                             <form action="{{ url('/home/save')}}" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                                <input name="isbn" type="text" class="form-control" placeholder="ISBN del libro"><br>
                                 <input name="title" type="text" class="form-control" placeholder="Titulo del libro"><br>
                                 <input name="author" type="text" class="form-control" placeholder="Autor"><br>
                                 <input name="public-date" type="text" class="form-control datepicker" id="datepicker" placeholder="Año de publicación"><br>
