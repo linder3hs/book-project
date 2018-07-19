@@ -36,7 +36,7 @@
                         @elseif($libro->estado == 1)
                             <p>Esperando aprobacion...</p>
                         @elseif($libro->estado == 2)
-                            <a href="" class="btn" style="border-color: #000000;" >Dar examen</a>
+                            <a href="{{ url('home/preguntas/' . $libro->isbn) }}" class="btn" style="border-color: #000000;" >Dar examen</a>
                         @endif
 
                     </div>

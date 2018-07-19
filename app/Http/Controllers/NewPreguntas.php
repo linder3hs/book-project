@@ -23,7 +23,8 @@ class NewPreguntas extends Controller {
 
     }
 
-    public function newPregunta(Request $request) {
+    public function newPregunta(Request $request)
+    {
         $ask = new Preguntas();
         $res = new Respuestas();
         $user = Auth::user();
@@ -41,41 +42,32 @@ class NewPreguntas extends Controller {
         $ask->save();
 
         if (!empty($r1) && !empty($r2) && !empty($r3) && !empty($r4) && !empty($r5)) {
-            //Respuesta 1
+            //Respuesta 2
             $res->isbn = $isbn;
-            $book = DB::table('book_registers')->where('isbn', '=', $res->isbn)->get();
-            if (!empty($book)) {
-                $res->user_id = $user->id;
-                $res->respuesta = $r1;
-                $res->save();
+            $res->id_pregunta = $ask->id;
+            $res->user_id = $user->id;
+            $res->respuesta2 = $r2;
+            $res->save();
+            //Respuesta 3
+            $res->isbn = $isbn;
+            $res->id_pregunta = $ask->id;
+            $res->user_id = $user->id;
+            $res->respuesta3 = $r3;
+            $res->save();
 
-                //Respuesta 2
-                $res->isbn = $isbn;
-                $res->user_id = $user->id;
-                $res->respuesta2 = $r2;
-                $res->save();
-
-                //Respuesta 3
-                $res->isbn = $isbn;
-                $res->user_id = $user->id;
-                $res->respuesta3 = $r3;
-                $res->save();
-
-                //Respuesta 4
-                $res->isbn = $isbn;
-                $res->user_id = $user->id;
-                $res->respuesta4 = $r4;
-                $res->save();
-
-                //Respuesta 5
-                $res->isbn = $isbn;
-                $res->user_id = $user->id;
-                $res->respuesta5 = $r5;
-                $res->save();
-                return redirect('/home/nuevaspreguntas');
-            }
-        } else {
-            echo "Debe rellenar todas las preguntas";
+            //Respuesta 4
+            $res->isbn = $isbn;
+            $res->id_pregunta = $ask->id;
+            $res->user_id = $user->id;
+            $res->respuesta4 = $r4;
+            $res->save();
+            //Respuesta 5
+            $res->isbn = $isbn;
+            $res->id_pregunta = $ask->id;
+            $res->user_id = $user->id;
+            $res->respuesta5 = $r5;
+            $res->save();
+            return redirect('/home/nuevaspreguntas');
         }
     }
 }
