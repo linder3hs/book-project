@@ -1,12 +1,10 @@
 @extends('layouts.app')
 @section('content')
-    <br><br>
+    <div style="background-color: #117ab1; padding: 14px;">
+        <h2 class="text-center text-white">Lista de mis libros</h2>
+    </div>
+    <br>
     <div class="container">
-    <form action="{{ url('searchlist') }}" method="get" class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Buscar">
-        <button class="btn btn-primary" type="submit">Search</button>
-    </form>
-    <h3>Lista de mis libros</h3>
     @foreach($libros as $libro)
         @if( $libro->user_id == Auth::user()->id)
                 <div class="list-group">
@@ -34,7 +32,7 @@
                             <input type="submit" class="btn" style="border-color: #000000;" value="CERTIFICAR">
                         </form>
                         @elseif($libro->estado == 1)
-                            <p>Esperando aprobacion...</p>
+                            <p>Esperando aprobación...</p>
                         @elseif($libro->estado == 2)
                             <a href="{{ url('home/preguntas/' . $libro->isbn) }}" class="btn" style="border-color: #000000;" >Dar examen</a>
                         @endif

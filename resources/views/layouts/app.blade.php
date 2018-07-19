@@ -71,7 +71,7 @@
                         <a class="dropdown-item" href="#">Acreditación</a>
                     </div>
                 </div>
-                <li class="nav-item" style="color: #000000 !important;">
+                <!--<li class="nav-item" style="color: #000000 !important;">
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="/home">Seguir &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
@@ -79,7 +79,7 @@
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="/home">Ayuda &nbsp;&nbsp;&nbsp;</a>
-                </li>
+                </li> -->
                 @if(Auth::user()->nivel == 4)
                 <li class="nav-item" style="color: #000000 !important;">
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/home/nuevaspreguntas') }}">Añadir Preguntas &nbsp;&nbsp;&nbsp;</a>
@@ -118,7 +118,7 @@
 @yield('content')
 </body>
 <!--Footer-->
-<footer class="page-footer font-small indigo pt-0" style="background-color: #117ab1; color: white;">
+<footer class="page-footer font-small indigo pt-0" style="background-color: #117ab1; color: white; margin-bottom: 0px !important;">
 
     <!--Footer Links-->
     <div class="container">

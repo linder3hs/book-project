@@ -1,12 +1,15 @@
 @extends('layouts.app')
 @section('content')
+    <div style="background-color: #117ab1; padding: 14px;">
+        <h2 class="text-center text-white">Registrar un libro</h2>
+    </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <div class="container">
     <div align="center" style="margin: 10px; margin-top: 40px;">
         <div class="col-md-8">
             <div align="center">
                 <div class="card">
-                    <span style="margin: 12px;">Registra un libro y certificate ya!!!.</span>
+                    <span style="margin: 12px;">Para poder registra un libro solo ingresa en <strong>ISBN</strong> de este.</span>
                     <div class="card-block">
                         <div id="contenedorIsbn" style="margin: 6px;">
                                 <input name="isbnbook" type="number" class="form-control card-text" id="numberIsbn" placeholder="Ingrese un ISBN">
@@ -25,17 +28,18 @@
                                 <button id="btnCancel" class="btn btn-sm btn-default" style="display: none;">Cancelar</button>
                             </form>
                         </div>
-                        <div class="sinIsbn" style="display: none;">
+                        <div class="sinIsbn container" style="display: none;">
                             <p>No se encontro el libro con el isbn que puso porfavor complete los datos.</p>
                             <form action="{{ url('/home/save')}}" method="post" enctype="multipart/form-data">
                                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                                <input name="isbn" type="text" class="form-control" placeholder="ISBN del libro"><br>
                                 <input name="title" type="text" class="form-control" placeholder="Titulo del libro"><br>
                                 <input name="author" type="text" class="form-control" placeholder="Autor"><br>
                                 <input name="public-date" type="text" class="form-control datepicker" id="datepicker" placeholder="Año de publicación"><br>
-                                Importa una Imagen<input name="imagen" type="file"><br>
-                                <input name="" type="submit" class="btn btn-sm btn-success" value="Guardar">
-                                <button id="cancelSinIsbn" class="btn btn-sm btn-default">Cancelar</button>
+                                Importa una Imagen<input name="imagen" type="file"><br><br>
+                                <input style="margin-bottom: 10px;" type="submit" class="btn btn-sm btn-success" value="Guardar">
                             </form>
+                                <button id="cancelSinIsbn" class="btn btn-sm btn-default" style="border-color: #000000;">Cancelar</button>
                         </div>
                     </div>
                 </div>

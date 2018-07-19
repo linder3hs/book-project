@@ -8,10 +8,10 @@
                 <form action="{{ url('/home/createpregunta') }}" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
-                        <input placeholder="Ingrese ISBN del libro" type="text" class="form-control col-md-12" name="isbn">
+                        <input required placeholder="Ingrese ISBN del libro" type="text" class="form-control col-md-12" name="isbn">
                     </div>
                     <div class="form-group">
-                        <input placeholder="Ingrese una pregunta" type="text" class="form-control col-md-12" name="pregunta">
+                        <input required placeholder="Ingrese una pregunta" type="text" class="form-control col-md-12" name="pregunta">
                     </div>
                     <div class="preguntitas"></div>
                     <!--a id="btnAdd" class="btn btn-default" style="border-color: #000000;"> add </a-->
