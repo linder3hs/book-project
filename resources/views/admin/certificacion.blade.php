@@ -1,10 +1,10 @@
-@extends('layouts.app')
+@extends('layouts.appadmin')
 @section('content')
     <div class="container">
         <div align="center" style="margin-top: 40px;">
             <h4>Solicitud de Certificaciones</h4>
         </div>
-        <div class="center-block" align="center" style="margin-top: 40px;">
+        <div class="center-block" align="center" style="width: 100%; display: contents; margin-top: 40px;">
             <table class="table table-striped table-hover table-responsive text-center">
                 <tr>
                     <th>Libro</th>
