@@ -36,9 +36,9 @@
                                 <input name="author" type="text" class="form-control" placeholder="Autor"><br>
                                 <input name="public-date" type="text" class="form-control datepicker" id="datepicker" placeholder="Año de publicación"><br>
                                 Importa una Imagen<input name="imagen" type="file"><br><br>
-                                <input style="margin-bottom: 10px;" type="submit" class="btn btn-sm btn-success" value="Guardar">
+                                <input style="margin-top: 10px;" type="submit" class="btn btn-sm btn-success" value="Guardar">
+                                <a id="cancelSinIsbn" class="btn btn-sm btn-default" style="border-color: #000000; margin-top: 10px;">Cancelar</a>
                             </form>
-                                <button id="cancelSinIsbn" class="btn btn-sm btn-default" style="border-color: #000000;">Cancelar</button>
                         </div>
                     </div>
                 </div>

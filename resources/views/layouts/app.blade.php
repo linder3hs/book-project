@@ -51,7 +51,9 @@
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/register') }}">Registrate &nbsp;&nbsp;&nbsp;</a>
                 </li>
             @else
-                
+                <li class="nav-item" style="color: #000000 !important;">
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('home/publicaciones') }}">Inicio &nbsp;&nbsp;&nbsp;</a>
+                </li>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
                         Logro

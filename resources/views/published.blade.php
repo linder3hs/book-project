@@ -1,5 +1,8 @@
 @extends('layouts.app')
 @section('content')
+    <div style="background-color: #117ab1; padding: 14px;">
+        <h2 class="text-center text-white">Publicaciones</h2>
+    </div>
     <br><br>
     <style type="text/css">
         div#padre {
@@ -14,7 +17,7 @@
             margin-left: 10px;
         }
     </style>
-    <div id="padre">
+    <div id="padre" class="d-none d-lg-block">
         <div id="left" class="card">
             <div class="card-body" style="border: solid 1px black;">
                 <div align="center" style="margin-top: 10px">
