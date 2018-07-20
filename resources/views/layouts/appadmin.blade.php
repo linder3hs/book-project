@@ -49,9 +49,9 @@
                 <li class="nav-item" style="color: #000000 !important;">
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/usuarios') }}">Usuarios &nbsp;&nbsp;&nbsp;</a>
                 </li>
-                <li class="nav-item" style="color: #000000 !important;">
+                <!-- <li class="nav-item" style="color: #000000 !important;">
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/preguntas') }}">Preguntas &nbsp;&nbsp;&nbsp;</a>
-                </li>
+                </li> -->
                 <li class="nav-item" style="color: #000000 !important;">
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/certificacion') }}">Certificaciones &nbsp;&nbsp;&nbsp;</a>
                 </li>

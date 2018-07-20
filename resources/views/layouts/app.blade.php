@@ -56,7 +56,7 @@
                 </li>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
-                        Logro
+                        &nbsp;&nbsp;&nbsp;Logro
                     </a>
                     <div class="dropdown-menu" aria-labelledby="">
                         <a class="dropdown-item" href="{{ url('#') }}">Certificaciones</a>

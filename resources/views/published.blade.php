@@ -30,10 +30,10 @@
     </div>
     <div class="container col-lg-5 col-md-offset-5">
         <div class="form-group">
-            <h5>Tus publicaciones</h5>
+            <h5>Tús publicaciones</h5>
             <form action="{{ url('/home/publicaciones') }}" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
-                <input type="text" name="public" class="form-control" style="height: 150px;"><br>
+                <textarea type="text" name="public" class="form-control" style="height: 150px;"></textarea><br>
                 <input type="submit" value="Publicar" class="btn btn-success">
             </form>
         </div>
