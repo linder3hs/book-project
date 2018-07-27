@@ -8,7 +8,11 @@
                 <form action="{{ url('/home/createpregunta') }}" method="post">
                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                     <div class="form-group">
-                        <input required placeholder="Ingrese ISBN del libro" type="text" class="form-control col-md-12" name="isbn">
+                        <select name="isbn" id="" class="form-control">
+                        @foreach($certificaciones as $cer)
+                        <option value="{{ $cer->isbn }}">{{ $cer->isbn . " - " . $cer->libro }}</option>
+                        @endforeach
+                        </select>
                     </div>
                     <div class="form-group">
                         <input required placeholder="Ingrese una pregunta" type="text" class="form-control col-md-12" name="pregunta">
