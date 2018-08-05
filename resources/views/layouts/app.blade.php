@@ -1,29 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <!-- Bootstrap Core CSS -->
     <link href="{{ asset('/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
-
     <!-- Custom Fonts -->
     <link href="{{ asset('/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
     <link href="{{ asset('/vendor/simple-line-icons/css/simple-line-icons.css') }}" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="{{ asset('/css/stylish-portfolio.min.css" rel="stylesheet') }}">
-
     <script src="{{ asset('/js/jquery.js') }}"></script>
     <script src="{{ asset('/js/book.js') }}"></script>
-
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
     <title>Book</title>
     <!-- Scripts -->
     <script>
@@ -32,16 +24,13 @@
         ]); ?>
     </script>
     <link rel="shortcut icon" type="image/png" href="{{ url('/agenda.png') }}" />
-
 </head>
-
 <body id="page-top">
-<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #000; color: #fff; height: 55px;">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000;">
+    <button class="navbar-toggler" style="background-color: white;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <!-- Links -->
-    <div class="collapse navbar-collapse" id="nav-content">
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
             @if (Auth::guest())
                 <li class="nav-item active" style="color: #000000 !important;">
@@ -56,7 +45,7 @@
                 </li>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
-                        &nbsp;&nbsp;&nbsp;Logro
+                        Logro
                     </a>
                     <div class="dropdown-menu" aria-labelledby="">
                         <a class="dropdown-item" href="{{ url('#') }}">Certificaciones</a>
@@ -83,9 +72,9 @@
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="/home">Ayuda &nbsp;&nbsp;&nbsp;</a>
                 </li> -->
                 @if(Auth::user()->nivel == 4)
-                <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/home/nuevaspreguntas') }}">Añadir Preguntas &nbsp;&nbsp;&nbsp;</a>
-                </li>
+                    <li class="nav-item" style="color: #000000 !important;">
+                        <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/home/nuevaspreguntas') }}">Añadir Preguntas &nbsp;&nbsp;&nbsp;</a>
+                    </li>
                 @endif
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">

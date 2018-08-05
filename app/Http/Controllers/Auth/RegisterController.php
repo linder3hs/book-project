@@ -12,8 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Auth\Events\Registered;
 use Socialite;
-class RegisterController extends Controller
-{
+class RegisterController extends Controller {
     /*
     |--------------------------------------------------------------------------
     | Register Controller
@@ -78,14 +77,11 @@ class RegisterController extends Controller
         ]);
     }
 
-
     public function register(Request $request) {
         $this->validator($request->all())->validate();
         event(new Registered($user = $this->create($request->all())));
-
         Mail::to($user->email)->send(new ConfirmationEmail($user));
-
-        return back()->with('status', 'Confirma tu cuente, Te hemos enviado un enlace a tu correo.');
+        return back()->with('status', 'Confirma tu cuenta, Te hemos enviado un enlace a tu correo.');
     }
 
     public function confirmEmail($token) {

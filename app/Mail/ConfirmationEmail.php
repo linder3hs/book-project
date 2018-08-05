@@ -9,19 +9,16 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use App\User;
 
 
-class ConfirmationEmail extends Mailable
-{
+class ConfirmationEmail extends Mailable {
     use Queueable, SerializesModels;
 
     public $user;
-    public function __construct(User $user)
-    {
+    public function __construct(User $user) {
         $this->user = $user;
     }
 
     
-    public function build()
-    {
+    public function build() {
         return $this->view('emails.confirmation');
     }
 }

@@ -1,83 +1,61 @@
 @extends('layouts.app')
-
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Registrate</div>
-
+<div style="background-color: #EDECEC;">
+    <div class="container mx-auto">
+        <div class="row mx-auto" align="center">
+            <div class="card card-body mx-auto col-md-6" style="margin: 20px;">
+                <h3 class="card-title font-weight-bold">Registrate</h3>
                 @include('partials.flash')
                 <div class="panel-body">
                     <form class="form-horizontal" role="form" method="POST" action="{{ url('/register') }}">
                         {{ csrf_field() }}
-
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Nombre</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
-
+                            <div class="col-md-12">
+                                <input id="name_user" aria-describedby="name_user" type="text" placeholder="Nombre" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
                                 @if ($errors->has('name'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('name') }}</strong>
-                                    </span>
+                                    <strong>{{ $errors->first('name') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
                         <div class="form-group{{ $errors->has('apellido') ? ' has-error' : '' }}">
-                            <label for="apellido" class="col-md-4 control-label">Apellido</label>
-
-                            <div class="col-md-6">
-                                <input id="apellido" type="text" class="form-control" name="apellido" value="{{ old('apellido') }}">
-
+                            <div class="col-md-12">
+                                <input id="apellido" type="text" placeholder="Apellido" class="form-control" name="apellido" value="{{ old('apellido') }}">
                                 @if ($errors->has('apellido'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('apellido') }}</strong>
-                                    </span>
+                                    <strong>{{ $errors->first('apellido') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
+                            <div class="col-md-12">
+                                <input id="email" type="email" placeholder="E-Mail" class="form-control" name="email" value="{{ old('email') }}" required>
                                 @if ($errors->has('email'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Contraseña</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
+                            <div class="col-md-12">
+                                <input id="password" type="password" placeholder="Contraseña" class="form-control" name="password" required>
                                 @if ($errors->has('password'))
                                     <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
                                 @endif
                             </div>
                         </div>
-
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirmar Contraseña</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            <div class="col-md-12">
+                                <input id="password-confirm" placeholder="Confirmar Contraseña" type="password" class="form-control" name="password_confirmation" required>
                             </div>
                         </div>
                         <div class="form-group">
-                            <label for="nacionalidad" class="col-md-4 control-label">Nacionalidad</label>
-
-                            <div class="col-md-6">
+                            <div class="col-md-12">
                                 <select name="nacionalidad" id="" class="form-control">
                                     <option value="">Seleccione su país</option>
                                     <option value="Argentina">Argentina</option>
@@ -281,14 +259,11 @@
                                     <option value="Taiwán">Taiwán</option>
                                     <option value="Uruguay">Uruguay</option>
                                 </select>
-
                             </div>
                         </div>
-
-
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-success">
+                                <button type="submit" class="btn" style="background-color: #117ab1; color: white;">
                                     Registrar
                                 </button>
                             </div>
