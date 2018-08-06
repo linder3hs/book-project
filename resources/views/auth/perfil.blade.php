@@ -10,7 +10,7 @@
         	</form>
 		</div>
 		<br>
-		<div style="background-color: #11ab70; padding: 10px; color: white;" >
+	<!--	<div style="background-color: #11ab70; padding: 10px; color: white;" >
 			<h3>Usuarios</h3>
 			<table class="table">
 				@foreach($users as $user)
@@ -20,7 +20,7 @@
 					</tr>
 				@endforeach
 			</table>
-		</div>
+		</div> -->
 		<hr>
 
 		<div class="row">
