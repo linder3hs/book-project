@@ -28,11 +28,11 @@
                                     <input name="department" value="{{ ucfirst(Auth::user()->provincia) }}" type="text" class="form-control" placeholder="Departamiento/Estado"><br>
                                 </div>
                                 <div class="col-md-12">
-                                    <label>Pon tu foto de perfil</label>
+                                    <label>Pon tú foto de perfil</label>
                                     <input class="form-control" type="file" required name="profile" value="Foto">
                                 </div>
                                 <div class="col-md-12" style="margin-top: 20px;">
-                                    <input type="submit" value="Guardar" class="btn btn-sm btn-success">
+                                    <input type="submit" value="Guardar" class="btn btn-md btn-block" style="background-color: #117ab1; color: white;">
                                 </div>
                             </div>
                         </div>
