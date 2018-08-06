@@ -26,7 +26,7 @@
 		<div class="row">
 			<div class="col-sm-10">
 				<h1 class="">{{ Auth::user()->name }}</h1>
-				<a href="{{url('/home/edit/' .  Auth::user()->id)}}" class="btn btn-outline-primary" role="button" aria-pressed="true">Actualizar</a>
+				<a href="{{url('/home/edit/' .  Auth::user()->id)}}" class="btn btn-outline-primary" role="button" aria-pressed="true">Editar perfil</a>
 				<br>
 			</div>
 			<div class="col-sm-2"><a href="{{url('/home/perfil')}}" class="pull-right"><img title="profile image" class="rounded img-thumbnail" src="{{url('/images/' . Auth::user()->avatar) }}"></a></div>
