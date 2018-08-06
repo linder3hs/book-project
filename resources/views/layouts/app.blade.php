@@ -58,8 +58,9 @@
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                         <a class="dropdown-item" href="{{ url('/home') }}">Registro de Libros</a>
-                        <a class="dropdown-item" href="{{ url('/home/lista') }}">Certificación</a>
-                        <a class="dropdown-item" href="#">Acreditación</a>
+                        <a class="dropdown-item" href="{{ url('/home/lista') }}">Obtener Certificación</a>
+                        <a class="dropdown-item" href="#">Obtener Acreditación</a>
+                        <a class="dropdown-item" href="#">Listado de libros registrados</a>
                     </div>
                 </div>
                 <!--<li class="nav-item" style="color: #000000 !important;">
