@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'linderhassinger00@book.iited.org.pe'),
-        'name' => env('MAIL_FROM_NAME', 'Linder Hassinger'),
+        'name' => env('MAIL_FROM_NAME', 'Certibook'),
     ],
 
     /*
