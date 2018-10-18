@@ -16,7 +16,9 @@ class NewPreguntas extends Controller {
     public function index() {
         $est = Auth::user()->nivel;
         if ($est == 4) {
-            $certificacions = DB::table('certificaciones')->where('user_id', '=', Auth::user()->id)->get();
+            $certificacions = DB::table('certificaciones')
+                                ->where('user_id', '=', Auth::user()->id)
+                                ->get();
             return view('addpreguntas')->with('certificaciones', $certificacions);
         } else {
            return redirect('/');
@@ -24,8 +26,7 @@ class NewPreguntas extends Controller {
 
     }
 
-    public function newPregunta(Request $request)
-    {
+    public function newPregunta(Request $request) {
         $ask = new Preguntas();
         $res = new Respuestas();
         $user = Auth::user();

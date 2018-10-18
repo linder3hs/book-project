@@ -42,8 +42,10 @@ class AdminController extends Controller {
 
     public function listuser() {
         $users = User::all();
-        $tipos = array('1' => 'Inscrito', '2' => 'Lector', '4' => 'Certificador', '3' => 'Acreditador', '5' => 'Debaja');
-        return view('admin.listuser')->with('users', $users)->with('tipos', $tipos);
+        if (!empty($users)) {
+            $tipos = array('1' => 'Inscrito', '2' => 'Lector', '4' => 'Certificador', '3' => 'Acreditador', '5' => 'Debaja');
+            return view('admin.listuser')->with('users', $users)->with('tipos', $tipos);
+        }
     }
 
     public function updatenivel(Request $request) {
@@ -53,8 +55,10 @@ class AdminController extends Controller {
         $dbuser->exists = true;
         $dbuser->id = $user;
         $dbuser->nivel = $nivel;
-        $dbuser->save();
+        if (!empty($user) && !empty($nivel) && !empty($dbuser)) {
+            $dbuser->save();
         return redirect('admin/usuarios');
+        }
     }
 
     public function certificacion() {
@@ -62,7 +66,9 @@ class AdminController extends Controller {
                             ->join('users', 'users.id', '=', 'certificaciones.user_id')
                             ->select('users.*', 'certificaciones.*')
                             ->get();
-        return view('admin.certificacion')->with('certificaciones', $certificaciones);
+        if (!empty($certificaciones)) {
+            return view('admin.certificacion')->with('certificaciones', $certificaciones);
+        }
     }
 
     public function aprobarCertificacion(Request $request) {

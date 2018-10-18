@@ -12,8 +12,10 @@ class ListBookController extends Controller
     
     public function index() {
         $books = book_register::all();
-        $list = array('libros' => $books);
-        return view('list_book', $list);
+        if (!empty($books)) {
+            $list = array('libros' => $books);
+            return view('list_book', $list);
+        }
     }
 
     public function solicitarCertificacion(Request $request) {

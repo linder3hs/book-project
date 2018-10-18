@@ -16,6 +16,8 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+
+//User normal
 Route::get('/home', 'HomeController@index');
 Route::get('/home/configuracion','ConfiguracionController@index');
 Route::get('/home/perfil', 'PerfilController@index');
@@ -29,16 +31,21 @@ Route::post('/home/publicaciones', 'PublishedController@storage');
 Route::post('/home/comment', 'PublishedController@comment');
 Route::get('/home/preguntas/{id}','PreguntasController@index');
 Route::get('/home/respuestas','RespuestaController@index');
-Route::get('/admin/login', 'AdminController@showLoginForm')->name('admin.login');
+Route::get('/home/nuevaspreguntas', 'NewPreguntas@index');
+Route::post('/home/createpregunta', 'NewPreguntas@newPregunta');
+Route::post('/home/solicitarExamen', 'ListBookController@solicitarCertificacion');
+
+//Admin Routes
+Route::get('/admin', 'AdminController@showLoginForm')->name('admin.login');
 Route::post('/admin/login', 'AdminController@login')->name('admin.login.submit');
 Route::get('/admin/preguntas', 'AdminController@preguntas')->name('admin.dashboard');
 Route::get('/admin/usuarios', 'AdminController@listuser');
 Route::post('/admin/updatenivel', 'AdminController@updatenivel');
-Route::get('/home/nuevaspreguntas', 'NewPreguntas@index');
-Route::post('/home/createpregunta', 'NewPreguntas@newPregunta');
-
+Route::post('admin/aprobarCertificacion', 'AdminController@aprobarCertificacion');
+Route::get('admin/certificacion', 'AdminController@certificacion');
+Route::get('admin/user/certicate', 'UserController@index');
+Route::get('admin/user/detail/{id}', 'UserController@detailUserCerticate');
+// Login social
 Route::get('auth/facebook', 'Auth\RegisterController@redirectToProvider');
 Route::get('auth/facebook/callback', 'Auth\RegisterController@handleProviderCallback');
-Route::get('admin/certificacion', 'AdminController@certificacion');
-Route::post('admin/aprobarCertificacion', 'AdminController@aprobarCertificacion');
-Route::post('/home/solicitarExamen', 'ListBookController@solicitarCertificacion');
+
