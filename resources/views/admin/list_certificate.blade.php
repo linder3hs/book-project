@@ -1,6 +1,6 @@
 @extends('layouts.appadmin')
 @section('content')
-<h1>Lista de usuarios certificados</h1>
+<h1>Lista de usuarios certificadores</h1>
 <br><br>
 <style>
     .table-responsive {
