@@ -8,7 +8,7 @@
               <br>
               <h1 class="mb-4">El Gran lector</h1>
               <h3 class="mb-5">
-                  Registra y certificate leyendo tus libro prefierido
+                  Registra y certificate leyendo tus libros prefieridos
               </h3>
               <a href="{{ url('/login') }}" class="btn btn-primary">Inicias Sesión</a>&nbsp; ó &nbsp;
               <a href="{{ url('/register') }}" class="btn btn-success">Registrarse</a>
