@@ -1,0 +1,19 @@
+/* Estilos*/
+
+.bg_image{
+    background-image: url('https://chilepsicologos.cl/wp-content/uploads/2018/03/lectura.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px !important;
+    position: relative;
+}
+
+.bg_image::before{
+    background-color: rgba(0, 0, 0, 0.37);
+    content: '';
+    display: block;
+    height: 300px;
+    position: absolute;
+    width: 100%;
+}

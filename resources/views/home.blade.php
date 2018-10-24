@@ -61,6 +61,7 @@
                     data: { get_param: 'value' },
                     dataType: 'json',
                     success: function (data) {
+                        console.log(data);
                         console.log(data['totalItems']);
                         if (data['totalItems'] == 1) {
                             var img = data['items']['0']['volumeInfo']['imageLinks']['smallThumbnail'];
