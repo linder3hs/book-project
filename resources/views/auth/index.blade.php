@@ -20,7 +20,7 @@
           <div class="row">
               <div class="col-lg-10 mx-auto">
                   <h2 class="text-primary font-weight-bold">Elige un plan y empieza a leer</h2>
-                  <div class="container-fluid" style="margin-top: 30px;">
+                  <div class="container-fluid col-xs-6 table-responsive offset-top-30">
                       <table class="table table-bordered table-striped table-hover border-primary font-weight-bold text-dark">
                           <thead class="thead-dark">
                           <tr>
