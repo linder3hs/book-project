@@ -1,5 +1,7 @@
 // Ajax para buscar libros por isbn
 
+    //$(document).ready(function () {
+    //});
     // Capturamos el valor del input y traemos los datos en json
     $('.btnBuscar').on('click', function () {
         var isbn = $('#numberIsbn').val();

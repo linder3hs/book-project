@@ -27,8 +27,8 @@
     <link rel="shortcut icon" type="image/png" href="{{ url('/agenda.png') }}" />
 </head>
 <body id="page-top">
-<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #000000;">
-    <button class="navbar-toggler" style="background-color: white;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<nav class="navbar navbar-expand-lg navbar-light" style="background-color: #117ab1;">
+    <button class="navbar-toggler" style="background-color: white; margin: 6px;" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -42,7 +42,7 @@
                 </li>
             @else
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('home/publicaciones') }}">Inicio &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/home') }}">Inicio &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
@@ -86,8 +86,7 @@
                         <a class="dropdown-item" href="{{ url('/home/perfil') }}">Yo</a>
                         <a class="dropdown-item" href="{{ url('/logout') }}"
                            onclick="event.preventDefault();
-                                                    document.getElementById('logout-form').submit();">
-                            Salir &nbsp;&nbsp;&nbsp;
+                           document.getElementById('logout-form').submit();">Salir &nbsp;&nbsp;&nbsp;
                         </a>
                         <form id="logout-form" action="{{ url('/logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}

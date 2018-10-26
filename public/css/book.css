@@ -17,3 +17,23 @@
     position: absolute;
     width: 100%;
 }
+
+.offset-top-10 {
+    margin-top: 10px !important;
+}
+
+.offset-top-20 {
+    margin-top: 20px !important;
+}
+
+.offset-top-30 {
+    margin-top: 30px !important;
+}
+
+.offset-top-40 {
+    margin-top: 40px !important;
+}
+
+.offset-top-140 {
+    margin-top: 140px !important;
+}
