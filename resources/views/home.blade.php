@@ -6,7 +6,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <div class="container">
         <div class="row" style="margin: 10px; margin-top: 40px;">
-            <div class="col-md-6">
+            <div class="col-md-6 offset-top-30">
                 <div align="">
                     <div class="card">
                         <div class="card-block">
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6 offset-top-30">
                 <div align="center">
                     <h3>¿Qué es <strong>ISBN</strong>?</h3>
                     <p class="text-primary text-left">Un ISBN es un código normalizado internacional para libros (International Standard Book Number). Los ISBN tuvieron 10 dígitos hasta diciembre de 2006 pero, desde enero de 2007, tienen siempre 13 dígitos. Los ISBN se calculan utilizando una fórmula matemática específica e incluyen un dígito de control que valida el código.</p>
