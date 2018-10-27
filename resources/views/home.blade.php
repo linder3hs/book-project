@@ -10,7 +10,7 @@
                 <div align="">
                     <div class="card">
                         <div class="card-block">
-                            <div class="card-header bg-primary text-white">Para poder registra un libro solo ingresa en <strong>ISBN</strong> de este.</div>
+                            <div class="card-header bg-primary text-white">Para poder registrar un libro solo ingresa el <strong>ISBN</strong>.</div>
                             <div id="contenedorIsbn">
                                 <div class="form-group col-md-11 offset-top-20">
                                     <input name="isbnbook" type="number" class="form-control form-control-lg card-text" id="numberIsbn" placeholder="Ingrese un ISBN">
@@ -27,8 +27,10 @@
                                     <input type="hidden" id="anopure" name="anopure">
                                     <input type="hidden" id="imgre" name="imgre">
                                     <input type="hidden" id="isbn" name="isbn">
-                                    <input id="btnRe" style="display: none;" type="submit" value="Registrar" class="btn btn-sm btn-primary">
-                                    <button id="btnCancel" class="btn btn-sm btn-default" style="display: none;">Cancelar</button>
+                                    <div class="form-group" style="margin: 15px;">
+                                        <input id="btnRe" style="display: none;" type="submit" value="Registrar" class="btn btn-md btn-primary">
+                                        <button id="btnCancel" class="btn btn-md btn-outline-danger" style="display: none;">Cancelar</button>
+                                    </div>
                                 </form>
                             </div>
                             <div class="sinIsbn container" style="display: none;">
