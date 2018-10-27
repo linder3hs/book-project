@@ -7,10 +7,14 @@
               <br>
               <h1 class="mb-4">El Gran lector</h1>
               <h3 class="mb-5">
-                  Registra y certificate leyendo tus libros prefieridos
+                  Registrate y certificate leyendo tus libros prefieridos
               </h3>
-              <a href="{{ url('/login') }}" class="btn btn-primary">Inicias Sesión</a>&nbsp; ó &nbsp;
-              <a href="{{ url('/register') }}" class="btn btn-success">Registrarse</a>
+              @if (Auth::guest())
+                  <a href="{{ url('/login') }}" class="btn btn-primary">Inicias Sesión</a>&nbsp; ó &nbsp;
+                  <a href="{{ url('/register') }}" class="btn btn-success">Registrarse</a>
+              @else
+                  <a href="{{ url('/home') }}" class="btn btn-primary">Home</a>
+              @endif
           </div>
       </div>
   </div>
