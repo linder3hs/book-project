@@ -35,10 +35,10 @@
         <ul class="navbar-nav">
             @if (Auth::guest())
                 <li class="nav-item active" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/login') }}">Inciar Sesión &nbsp;&nbsp;&nbsp;</a>
+                    <h4 style="padding-bottom: 10px;"><a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/login') }}">Inciar Sesión &nbsp;&nbsp;&nbsp;</a></h4>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/register') }}">Registrate &nbsp;&nbsp;&nbsp;</a>
+                    <h4><a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/register') }}">Registrate &nbsp;&nbsp;&nbsp;</a></h4>
                 </li>
             @else
                 <li class="nav-item" style="color: #000000 !important;">
