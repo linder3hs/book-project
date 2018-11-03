@@ -27,7 +27,7 @@
                 @elseif($user->nivel == 3)
                     {{ $level = "Certificador" }}
                 @elseif($user->nivel == 4)
-                    {{ $level = "Acreditador" }}
+                    {{ $level = "Certificador" }}
                 @elseif($user->nivel == 5)
                     {{ $level = "Debaja" }}
                 @endif

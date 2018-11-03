@@ -16,9 +16,9 @@
                     <p class="card-text">Año de Publicación: {{ substr($libro->public_date,0) }}</p>
                     <p>
                         @if(strpos($libro->image, 'http') !== false)
-                            <img height="300" width="200" class="img img-rounded" src="{{ $libro->image }}" height="300">
+                            <img height="300" width="200" class="rounded mx-auto d-block" src="{{ $libro->image }}" height="300">
                         @else
-                            <img height="300" width="200" class="img img-rounded" src="/images/{{ $libro->image }}">
+                            <img height="300" width="200" class="rounded mx-auto d-block" src="/images/{{ $libro->image }}">
                         @endif
                     </p>
                     <div class="" align="center">

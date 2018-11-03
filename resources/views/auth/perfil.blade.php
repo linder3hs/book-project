@@ -22,7 +22,6 @@
 			</table>
 		</div> -->
 		<hr>
-
 		<div class="row">
 			<div class="col-sm-10">
 				<h1 class="">{{ Auth::user()->name }}</h1>
@@ -31,7 +30,6 @@
 			</div>
 			<div class="col-sm-2"><a href="{{url('/home/perfil')}}" class="pull-right"><img title="profile image" class="rounded img-thumbnail" src="{{url('/images/' . Auth::user()->avatar) }}"></a></div>
 		</div>
-
 			<!--/col-3-->
 			<div class="col-sm-9" style="" contenteditable="false">
 				<div class="panel panel-default">
