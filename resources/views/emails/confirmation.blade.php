@@ -8,6 +8,7 @@
 	    <h1>Gracias por unirse a nuestra comunidad</h1>
     </div>
     <div align="center">
+        <!--->
         <p>Usted necesita confirmar su correo <a href='{{ url("register/confirm/{$user->token}") }}'>Confirma tu cuenta</a></p>
     </div>
 </body>
