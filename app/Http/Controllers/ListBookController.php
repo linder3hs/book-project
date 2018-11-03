@@ -6,12 +6,15 @@ use App\book_register;
 use App\Certificaciones;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class ListBookController extends Controller
 {
     
     public function index() {
-        $books = book_register::all();
+        $books = DB::table('book_registers')
+                ->where('user_id', '=', Auth::user()->id)
+                ->get();
         if (!empty($books)) {
             $list = array('libros' => $books);
             return view('list_book', $list);
