@@ -7,12 +7,16 @@
     @if(count($preguntas) > 1)
         @foreach($preguntas as $pregunta)
             <div class="container">
-                <span>{{ $con .") " .  $pregunta->pregunta }}</span><br>
-                <input type="radio" value="{{ $pregunta->respuesta }}"> {{ $pregunta->respuesta }}<br>
-                <input type="radio" value="{{ $pregunta->respuesta2 }}"> {{ $pregunta->respuesta2 }}<br>
-                <input type="radio" value="{{ $pregunta->respuesta3 }}"> {{ $pregunta->respuesta3 }}<br>
-                <input type="radio" value="{{ $pregunta->respuesta4 }}"> {{ $pregunta->respuesta4 }}<br>
-                <input type="radio" value="{{ $pregunta->respuesta5 }}"> {{ $pregunta->respuesta5 }}<br>
+                <div class="card">
+                    <div class="card-header bg-primary text-white"><span>{{ $con .") " .  $pregunta->pregunta }}</span><br></div>
+                    <div class="card-body">
+                        <input type="radio" value="{{ $pregunta->respuesta2 }}"> {{ $pregunta->respuesta2 }}<br>
+                        <input type="radio" value="{{ $pregunta->respuesta3 }}"> {{ $pregunta->respuesta3 }}<br>
+                        <input type="radio" value="{{ $pregunta->respuesta4 }}"> {{ $pregunta->respuesta4 }}<br>
+                        <input type="radio" value="{{ $pregunta->respuesta5 }}"> {{ $pregunta->respuesta5 }}<br>
+                    </div>
+                </div>
+
             </div>
             <span style="color: white;">{{ $con++ }}</span>
         @endforeach
