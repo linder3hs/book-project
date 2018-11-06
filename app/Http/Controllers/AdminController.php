@@ -83,18 +83,4 @@ class AdminController extends Controller {
         return redirect('/admin/certificacion');
     }
 
-    /*public function loginadmin(Request $request) {
-        $useradmin = $request->input('emailadmin');
-        $password = $request->input('passwordadmin');
-        $users = Admin::all();
-        foreach($users as $user) {
-            if ($user->email == $useradmin && $user->password == $password) {
-                return redirect('admin/preguntas');
-            } else {
-                echo "Datos incorrectos";
-                return redirect('admin');
-            }
-      }*/
-    
-        
 }

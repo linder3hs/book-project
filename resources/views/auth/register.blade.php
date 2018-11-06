@@ -19,12 +19,12 @@
                                 @endif
                             </div>
                         </div>
-                        <div class="form-group{{ $errors->has('apellido') ? ' has-error' : '' }}">
+                        <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
                             <div class="col-md-12">
-                                <input id="apellido" type="text" placeholder="Apellido" class="form-control" name="apellido" value="{{ old('apellido') }}">
-                                @if ($errors->has('apellido'))
+                                <input id="last_name" type="text" placeholder="Apellido" class="form-control" name="last_name" value="{{ old('last_name') }}">
+                                @if ($errors->has('last_name'))
                                     <span class="help-block">
-                                    <strong>{{ $errors->first('apellido') }}</strong>
+                                    <strong>{{ $errors->first('last_name') }}</strong>
                                 </span>
                                 @endif
                             </div>

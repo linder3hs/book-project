@@ -20,6 +20,7 @@
                                     <div id="content"></div>
                                     <img id="image" alt="">
                                 </div>
+                                <!-- Form para libro encontrado -->
                                 <form action="{{url('/home')}}" method="post">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <input type="hidden" id="titlere" name="titlere">
@@ -27,12 +28,15 @@
                                     <input type="hidden" id="anopure" name="anopure">
                                     <input type="hidden" id="imgre" name="imgre">
                                     <input type="hidden" id="isbn" name="isbn">
+                                    <input type="hidden" id="idiomare" name="idiomare">
+                                    <input type="hidden" id="descre" name="descre">
                                     <div class="form-group" style="margin: 15px;">
                                         <input id="btnRe" style="display: none;" type="submit" value="Registrar" class="btn btn-md btn-primary">
                                         <button id="btnCancel" class="btn btn-md btn-outline-danger" style="display: none;">Cancelar</button>
                                     </div>
                                 </form>
                             </div>
+                            <!-- Form para libro no encontrado -->
                             <div class="sinIsbn container" style="display: none;">
                                 <p>No se encontro el libro con el isbn que puso porfavor complete los datos.</p>
                                 <form action="{{ url('/home/save')}}" method="post" enctype="multipart/form-data">
@@ -76,13 +80,17 @@
                         console.log(data['totalItems']);
                         if (data['totalItems'] == 1) {
                             var img = data['items']['0']['volumeInfo']['imageLinks']['smallThumbnail'];
+                            console.log(data['items']['0']['volumeInfo']['language']);
+                            console.log(data['items']['0']['volumeInfo']['description']);
                             $('#imgre').val(img);
                             console.log("foto: " + data['items'][0]['volumeInfo']['imageLinks']['smallThumbnail']);
                             $('#titlere').val(data['items'][0]['volumeInfo']['title']);
                             $('#autorre').val(data['items'][0]['volumeInfo']['authors']);
                             $('#anopure').val(data['items'][0]['volumeInfo']['publishedDate']);
+                            $('#idiomare').val(data['items']['0']['volumeInfo']['language']);
+                            $('#descre').val(data['items']['0']['volumeInfo']['description']);
                             $('#isbn').val(data['items'][0]['volumeInfo']['industryIdentifiers'][0]['identifier']);
-                            $('#content').html('<h5>Titulo del libro: ' + data['items'][0]['volumeInfo']['title'] + '</h5>' + '<p>Autor:  ' + data['items'][0]['volumeInfo']['authors'] + '</p>' + '<p>Año de publicación:  ' + data['items'][0]['volumeInfo']['publishedDate'] + '</p>' + '<br>');
+                            $('#content').html('<h5>Titulo del libro: ' + data['items'][0]['volumeInfo']['title'] + '</h5>' + '<p>Autor:  ' + data['items'][0]['volumeInfo']['authors'] + '</p>' + '<p>Año de publicación:  ' + data['items'][0]['volumeInfo']['publishedDate'] + '</p>' + '<p>Idioma: ' + data['items']['0']['volumeInfo']['language'] +'</p>' + '<p>Decripcion: <br>' + data['items']['0']['volumeInfo']['description'] +'</p>' + '<br>');
                             $('#image').attr('src', data['items']['0']['volumeInfo']['imageLinks']['smallThumbnail']);
                             $('#btnRe').show();
                             $('#btnCancel').show();

@@ -67,7 +67,7 @@
     <body>
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
-                <div " class="top-right links">
+                <div class="top-right links">
                     @if (Auth::check())
 
                         <a style="color: #FFF; font-weight: bold;font-size: 16px;" href="{{ url('/home') }}">Inicio</a>

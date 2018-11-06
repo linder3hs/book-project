@@ -16,7 +16,7 @@
                                     <input name="second" value="{{ ucfirst(Auth::user()->second_name)  }}" type="text" class="form-control" placeholder="Segundo Nombre"><br>
                                 </div>
                                 <div class="col-md-12">
-                                    <input name="last_name" type="text" value="{{ ucfirst(Auth::user()->apellido) }}" class="form-control" placeholder="Primer Apellido"><br>
+                                    <input name="last_name" type="text" value="{{ ucfirst(Auth::user()->last_name) }}" class="form-control" placeholder="Primer Apellido"><br>
                                     <input name="second_last" type="text" value="{{ ucfirst(Auth::user()->second_last_name)  }}"  class="form-control" placeholder="Segundo Apellido"><br>
                                 </div>
                                 <div class="col-md-12">

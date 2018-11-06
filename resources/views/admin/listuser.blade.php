@@ -1,14 +1,9 @@
 @extends('layouts.appadmin')
 @section('content')
 <br><br>
-<style>
-    .table-responsive {
-        display: contents;
-    }
-</style>
-<div align="center" style="width: 100%; display: contents">
-    <div class="container-fluid center-block">
-        <table class="table table-striped table-responsive">
+<div align="center">
+    <div class="table-responsive container center-block">
+        <table class="table table-striped">
            <thead>
                 <tr>
                     <th style="width: 10%;">Nombre</th>
@@ -19,15 +14,16 @@
                     <th>Nacionalidad</th>
                 </tr>
            </thead>
+            {{ $level = "" }}
             @foreach($users as $user)
                 @if($user->nivel == 1)
-                    {{ $level = "Inscrito" }}
+                    <?php $level = "Inscrito"; ?>
                 @elseif($user->nivel == 2)
-                    {{ $level = "Lector" }}
+                    <?php $level = "Lector"; ?>
                 @elseif($user->nivel == 3)
-                    {{ $level = "Certificador" }}
+                    <?php $level = "Certificador"; ?>
                 @elseif($user->nivel == 5)
-                    {{ $level = "Debaja" }}
+                    <?php $level = "Debaja"; ?>
                 @endif
                 <tr>
                     <td>{{ $user->name}}</td>
@@ -39,7 +35,7 @@
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
                             <input type="hidden" value="{{ $user->id }}" name="userid">
                             <select name="nivel" id="">
-                                <option value="{{ $user->nivel }}">{{ $level }}</option>
+                                <option value="{{ $user->nivel }}"><?php echo $level; ?></option>
                             @foreach($tipos as $key => $value)
                                 <option value="{{$key}}">{{$value}}</option>
                             @endforeach

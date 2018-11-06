@@ -13,12 +13,8 @@ class PerfilController extends Controller
     }
 
 
-    public function index(Request $request) {
-        $nombre = ($request->get('buscador'));
-        //$users = User::name($request->get('buscador'));
-        $users = User::name($nombre)->orderby('id', 'DESC')->paginate();
-        $user = array('users' => $users);
-    	return view('auth.perfil', $user);
+    public function index() {
+    	return view('auth.perfil');
     }
     
     public function edit() {
@@ -30,7 +26,7 @@ class PerfilController extends Controller
         $iuser = User::find($user->id);
         $iuser->name = $request->input('first_name');
         $iuser->second_name = $request->input('second');
-        $iuser->apellido = $request->input('last_name');
+        $iuser->last_name = $request->input('last_name');
         $iuser->second_last_name = $request->input('second_last');
         $iuser->fechadenacimiento = $request->input('date_born');
         $iuser->age = $request->input('age');

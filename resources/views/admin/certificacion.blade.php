@@ -4,8 +4,8 @@
         <div align="center" style="margin-top: 40px;">
             <h4>Solicitud de Certificaciones</h4>
         </div>
-        <div class="center-block" align="center" style="width: 100%; display: contents; margin-top: 40px;">
-            <table class="table table-striped table-hover table-responsive text-center">
+        <div class="table-responsive" align="center">
+            <table class="table table-striped table-hover text-center">
                 <tr>
                     <th>Libro</th>
                     <th>ISBN</th>
@@ -18,7 +18,7 @@
                         <tr>
                             <td>{{ $certificacion->libro }}</td>
                             <td>{{ $certificacion->isbn }}</td>
-                            <td>{{ $certificacion->name . " " . $certificacion->apellido }}</td>
+                            <td>{{ $certificacion->name . " " . $certificacion->last_name }}</td>
                             <td>{{ $certificacion->created_at }}</td>
                             <td>
                                 <form action="{{ url(('/admin/aprobarCertificacion')) }}" method="post">

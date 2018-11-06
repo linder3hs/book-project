@@ -12,6 +12,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Auth\Events\Registered;
 use Socialite;
+
 class RegisterController extends Controller {
     /*
     |--------------------------------------------------------------------------
@@ -55,7 +56,7 @@ class RegisterController extends Controller {
             'name' => 'required|max:255',
             'email' => 'required|email|max:255|unique:users',
             'password' => 'required|min:6|confirmed',
-            'apellido' => 'required|max:255',
+            'last_name' => 'required|max:255',
 
         ]);
     }
@@ -72,7 +73,7 @@ class RegisterController extends Controller {
             'nacionalidad' => $data['nacionalidad'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
-            'apellido' => $data['apellido'],
+            'last_name' => $data['last_name'],
             'avatar' => 'http//lorempixel/300/300/people?' . random_int(1,100),
         ]);
     }

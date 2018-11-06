@@ -52,6 +52,8 @@ class HomeController extends Controller
         $book->author = $request->input('autorre');
         $book->public_date = $request->input('anopure');
         $book->image = $request->input('imgre');
+        $book->language = $request->input( 'idiomare');
+        $book->description = $request->input('descre');
         $book->estado = 0;
         $book->user_id = $user->id;
         $book->save();
@@ -59,7 +61,7 @@ class HomeController extends Controller
     }
 
     public function searchScope($query, $s) {
-        return $query->where('name', 'like', '%' . $s . '%')->orWhere('apellido' , 'like' , '%' . $s . '%');
+        return $query->where('name', 'like', '%' . $s . '%')->orWhere('last_name' , 'like' , '%' . $s . '%');
     }
 
 

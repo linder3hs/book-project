@@ -25,7 +25,7 @@
             <div class="card-body" style="border: solid 1px black;">
                 <div align="center" style="margin-top: 10px">
                     <img style="width: 100px; height: 100px;" src="{{url('/images/' . Auth::user()->avatar) }}" alt="" class="rounded-circle">
-                    <h4 style="margin-top: 20px;">{{ Auth::user()->name . " " .Auth::user()->apellido }}</h4>
+                    <h4 style="margin-top: 20px;">{{ Auth::user()->name . " " .Auth::user()->last_name }}</h4>
                     <p>Amor a los libros</p>
                 </div>
             </div>
@@ -71,7 +71,7 @@
                 @foreach($comentarios as $comentario)
                    @if( $comentario->pub_id == $public->id)
                     <ul class="list-group-item" style="background-color: #f3f6f8;">
-                        <span class="text-dark font-weight-bold">{{ $comentario->name . " " . $comentario->apellido }}</span>
+                        <span class="text-dark font-weight-bold">{{ $comentario->name . " " . $comentario->last_name }}</span>
                         <span style="float: right; font-size: 12px;">{{ date('d-m-Y', strtotime($comentario->created_at)) }}</span>
                         <br>
                         <span style="font-size: 14px; font-family: Helvetica; ">{{ $comentario->comentario }}</span>
