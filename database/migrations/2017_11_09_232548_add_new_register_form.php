@@ -14,7 +14,7 @@ class AddNewRegisterForm extends Migration
     public function up()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('apellido');
+            $table->string('last_name');
             $table->string('nacionalidad');
             $table->string('generoFavorito');
             $table->string('avatar')->nullable();
@@ -29,7 +29,7 @@ class AddNewRegisterForm extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropColumn('apellido');
+            $table->dropColumn('last_name');
             $table->dropColumn('nacionalidad');
             $table->dropColumn('generoFavorito');
             $table->dropColumn('avatar');
