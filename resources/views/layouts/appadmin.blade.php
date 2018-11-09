@@ -36,13 +36,12 @@
 </head>
 
 <body id="page-top">
-<nav class="navbar navbar-expand-sm navbar-light" style="background-color: #16B166;">
+<nav class="navbar navbar-expand-sm navbar-light bg-primary">
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav-content" aria-controls="nav-content" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
 
-    <!-- Brand -->
-    <a class="navbar-brand" href="{{ url('/admin/usuarios') }}"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Antu_scuolabook.svg/120px-Antu_scuolabook.svg.png" alt="" style="height: 60px; width: 60px;"></a>
+
     <!-- Links -->
     <div class="collapse navbar-collapse" id="nav-content">
         <ul class="navbar-nav">
@@ -53,7 +52,7 @@
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/preguntas') }}">Preguntas &nbsp;&nbsp;&nbsp;</a>
                 </li> -->
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/user/certicate') }}">Certificadores &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/user/certificate') }}">Certificadores &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/certificacion') }}">Certificaciones &nbsp;&nbsp;&nbsp;</a>

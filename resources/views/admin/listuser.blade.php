@@ -4,7 +4,7 @@
 <div align="center">
     <div class="table-responsive container center-block">
         <table class="table table-striped">
-           <thead>
+           <thead class="bg-primary text-white">
                 <tr>
                     <th style="width: 10%;">Nombre</th>
                     <th>Apellido</th>

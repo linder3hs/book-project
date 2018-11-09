@@ -25,7 +25,7 @@ class AdminController extends Controller {
         'password' => 'required|min:6'
         ]);
         if (Auth::guard('admin')->attempt(['email' => $request->email, 'password' => $request->password], $request->remember)) {
-           // echo ("Correcto master");
+            // echo ("Correcto master");
             return redirect('admin/usuarios');
             //return redirect()->intended(route('admin.dashboard'));
 
@@ -38,49 +38,6 @@ class AdminController extends Controller {
 
     public function preguntas() {
         return view('admin.addask');
-    }
-
-    public function listuser() {
-        $users = User::all();
-        if (!empty($users)) {
-            $tipos = array('1' => 'Inscrito', '2' => 'Lector', '4' => 'Certificador', '5' => 'Debaja');
-            return view('admin.listuser')->with('users', $users)->with('tipos', $tipos);
-        }
-    }
-
-    public function updatenivel(Request $request) {
-        $user = $request->input('userid');
-        $nivel = $request->input('nivel');
-        $dbuser = new User();
-        $dbuser->exists = true;
-        $dbuser->id = $user;
-        $dbuser->nivel = $nivel;
-        if (!empty($user) && !empty($nivel) && !empty($dbuser)) {
-            $dbuser->save();
-        return redirect('admin/usuarios');
-        }
-    }
-
-    public function certificacion() {
-        $certificaciones = DB::table('certificaciones')
-                            ->join('users', 'users.id', '=', 'certificaciones.user_id')
-                            ->select('users.*', 'certificaciones.*')
-                            ->get();
-        if (!empty($certificaciones)) {
-            return view('admin.certificacion')->with('certificaciones', $certificaciones);
-        }
-    }
-
-    public function aprobarCertificacion(Request $request) {
-        $idc = $request->input('idc');
-        $certificacion = Certificaciones::find($idc);
-        $certificacion->estado = 1;
-        $certificacion->save();
-        $idbook = $request->input('book_id');
-        $libro = book_register::find($idbook);
-        $libro->estado = 2;
-        $libro->save();
-        return redirect('/admin/certificacion');
     }
 
 }

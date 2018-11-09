@@ -37,15 +37,18 @@ Route::post('/home/createpregunta', 'NewPreguntas@newPregunta');
 Route::post('/home/solicitarExamen', 'ListBookController@solicitarCertificacion');
 
 // Admin Routes
+# GET
 Route::get('/admin/login', 'AdminController@showLoginForm')->name('admin.login');
-Route::post('/admin/login', 'AdminController@login')->name('admin.login.submit');
 Route::get('/admin/preguntas', 'AdminController@preguntas')->name('admin.dashboard');
-Route::get('/admin/usuarios', 'AdminController@listuser');
-Route::post('/admin/updatenivel', 'AdminController@updatenivel');
+Route::get('/admin/usuarios', 'ListUserAdminController@listuser');
+Route::get('admin/certificacion', 'CertificacionUserAdminController@certificacion');
+Route::get('admin/user/certificate', 'CertificacionUserAdminController@index');
+Route::get('admin/user/detail/{id}', 'CertificacionUserAdminController@detailUsercertificate');
+# POST
+Route::post('/admin/login', 'AdminController@login')->name('admin.login.submit');
+Route::post('/admin/updatenivel', 'ListUserAdminController@updatenivel');
 Route::post('admin/aprobarCertificacion', 'AdminController@aprobarCertificacion');
-Route::get('admin/certificacion', 'AdminController@certificacion');
-Route::get('admin/user/certicate', 'UserController@index');
-Route::get('admin/user/detail/{id}', 'UserController@detailUserCerticate');
+Route::post('admin/certificate/aprobar', 'CertificacionUserAdminController@aprobarUserCertificate');
 
 // Login social
 Route::get('auth/facebook', 'Auth\RegisterController@redirectToProvider');
