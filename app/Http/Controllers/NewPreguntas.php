@@ -15,7 +15,7 @@ class NewPreguntas extends Controller {
 
     public function index() {
         $est = Auth::user()->nivel;
-        if ($est == 4) {
+        if ($est == 3) {
             $certificacions = DB::table('certificaciones')
                                 ->where('user_id', '=', Auth::user()->id)
                                 ->get();

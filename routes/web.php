@@ -47,7 +47,7 @@ Route::get('admin/user/detail/{id}', 'CertificacionUserAdminController@detailUse
 # POST
 Route::post('/admin/login', 'AdminController@login')->name('admin.login.submit');
 Route::post('/admin/updatenivel', 'ListUserAdminController@updatenivel');
-Route::post('admin/aprobarCertificacion', 'AdminController@aprobarCertificacion');
+Route::post('admin/aprobarCertificacion', 'CertificacionUserAdminController@aprobarCertificacion');
 Route::post('admin/certificate/aprobar', 'CertificacionUserAdminController@aprobarUserCertificate');
 
 // Login social

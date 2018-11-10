@@ -31,7 +31,7 @@ class CertificacionUserAdminController extends Controller {
 
             $libros = DB::table('book_registers')
                 ->where('user_id', '=', $id)
-                ->whereIn('estado', array(ListBookController::EST_CREADO, ListBookController::EST_CERTIFICAR, ListBookController::EST_EXAMEN))
+                ->whereIn('estado', array(ListBookController::EST_CERTIFICAR, ListBookController::EST_EXAMEN))
                 ->get();
             if (!empty($usuario)) {
                 return view('admin.detalle_usuario_certidicador')
