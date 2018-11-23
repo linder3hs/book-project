@@ -19,7 +19,10 @@ class NewPreguntas extends Controller {
             $certificacions = DB::table('certificaciones')
                                 ->where('user_id', '=', Auth::user()->id)
                                 ->get();
-            return view('addpreguntas')->with('certificaciones', $certificacions);
+            $preguntas = DB::table('preguntas')
+                            ->where('iduser', '=', Auth::user()->id)
+                            ->get();
+            return view('addpreguntas')->with('certificaciones', $certificacions)->with('preguntas', $preguntas);
         } else {
            return redirect('/');
         }
@@ -69,7 +72,7 @@ class NewPreguntas extends Controller {
             $res->user_id = $user->id;
             $res->respuesta5 = $r5;
             $res->save();
-            return redirect('/home/nuevaspreguntas');
+            return redirect('/home/nuevaspreguntas')->with('status', 'La creación de la pregunta fue exitosa');
         }
     }
 }

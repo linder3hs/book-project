@@ -38,17 +38,19 @@ Route::post('/home/solicitarExamen', 'ListBookController@solicitarCertificacion'
 
 // Admin Routes
 # GET
-Route::get('/admin/login', 'AdminController@showLoginForm')->name('admin.login');
-Route::get('/admin/preguntas', 'AdminController@preguntas')->name('admin.dashboard');
-Route::get('/admin/usuarios', 'ListUserAdminController@listuser');
-Route::get('admin/certificacion', 'CertificacionUserAdminController@certificacion');
-Route::get('admin/user/certificate', 'CertificacionUserAdminController@index');
-Route::get('admin/user/detail/{id}', 'CertificacionUserAdminController@detailUsercertificate');
+Route::get('/admin/login', 'Admin\AdminController@showLoginForm')->name('admin.login');
+Route::get('/admin/preguntas', 'Admin\AdminController@preguntas')->name('admin.dashboard');
+Route::get('/admin/usuarios', 'Admin\ListUserAdminController@listuser');
+Route::get('admin/certificacion', 'Admin\CertificacionUserAdminController@certificacion');
+Route::get('admin/user/certificate', 'Admin\CertificacionUserAdminController@index');
+Route::get('admin/user/detail/{id}', 'Admin\CertificacionUserAdminController@detailUsercertificate');
+Route::get('/admin/preguntas', 'Admin\PreguntasAdminController@index');
 # POST
-Route::post('/admin/login', 'AdminController@login')->name('admin.login.submit');
-Route::post('/admin/updatenivel', 'ListUserAdminController@updatenivel');
-Route::post('admin/aprobarCertificacion', 'CertificacionUserAdminController@aprobarCertificacion');
-Route::post('admin/certificate/aprobar', 'CertificacionUserAdminController@aprobarUserCertificate');
+Route::post('/admin/login', 'Admin\AdminController@login')->name('admin.login.submit');
+Route::post('/admin/updatenivel', 'Admin\ListUserAdminController@updatenivel');
+Route::post('admin/aprobarCertificacion', 'Admin\CertificacionUserAdminController@aprobarCertificacion');
+Route::post('admin/certificate/aprobar', 'Admin\CertificacionUserAdminController@aprobarUserCertificate');
+Route::post('/admin/setAsk', 'Admin\PreguntasAdminController@setAskAdmin');
 
 // Login social
 Route::get('auth/facebook', 'Auth\RegisterController@redirectToProvider');

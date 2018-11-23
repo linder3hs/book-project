@@ -40,7 +40,7 @@
                                 <input type="hidden" name="id_user" value="{{ $id }}">
                                 <input type="submit" class="btn btn-success" value="Si">
                             </form>
-                            <a href="" class="btn btn-danger">No</a>
+                            <!-- <a href="" class="btn btn-danger">No</a> -->
                         </td>
                     </tr>
                 @endforeach

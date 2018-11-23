@@ -27,12 +27,25 @@ class ListBookController extends Controller {
     }
 
     public function listAllBooks() {
-        $books = DB::table('book_registers')
+        $createb = DB::table('book_registers')
             ->where('user_id', '=', Auth::user()->id)
+            ->where('estado', '=', self::EST_CREADO)
             ->get();
-        if (!empty($books)) {
-            $books = array('books' => $books);
-            return view('lista_book_all', $books);
+        $certificateb = DB::table('book_registers')
+            ->where('user_id', '=', Auth::user()->id)
+            ->whereIn('estado', array(self::EST_CERTIFICAR, self::EST_EXAMEN, self::EST_APROBADO))
+            ->get();
+        $examenb = DB::table('book_registers')
+            ->where('user_id', '=', Auth::user()->id)
+            ->where('estado', '=', self::EST_EXAMEN)
+            ->get();
+        $aprobadob = DB::table('book_registers')
+            ->where('user_id', '=', Auth::user()->id)
+            ->where('estado', '=', self::EST_APROBADO)
+            ->get();
+        if (!empty($createb)) {
+            return view('lista_book_all')->with('createb', $createb)->with('certificateb', $certificateb)
+                ->with('examenb', $examenb)->with('aprobadob', $aprobadob);
         }
     }
 
