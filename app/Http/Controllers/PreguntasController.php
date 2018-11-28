@@ -11,7 +11,7 @@ class PreguntasController extends Controller {
 
     public function index($isbn = null) {
         if (!empty($isbn)) {
-            $book = DB::table('book_registers')->where('isbn', '=', $isbn);
+            $book = DB::table('book_registers')->where('isbn', '=', $isbn)->get();
             $preguntas = DB::table('preguntas')
                 ->join('respuestas', 'respuestas.id_pregunta', '=', 'preguntas.id')
                 ->where('preguntas.isbn', '=', $isbn)

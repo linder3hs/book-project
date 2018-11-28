@@ -47,6 +47,11 @@ class NewPreguntas extends Controller {
         $ask->save();
 
         if (!empty($r1) && !empty($r2) && !empty($r3) && !empty($r4) && !empty($r5)) {
+            $res->isbn = $isbn;
+            $res->id_pregunta = $ask->id;
+            $res->user_id = $user->id;
+            $res->respuesta = $r1;
+            $res->save();
             //Respuesta 2
             $res->isbn = $isbn;
             $res->id_pregunta = $ask->id;

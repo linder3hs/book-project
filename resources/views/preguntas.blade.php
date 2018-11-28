@@ -1,7 +1,11 @@
 @extends('layouts.app')
 @section('content')
     <div class="container" style="margin-top: 20px;">
-        <h1>Preguntas</h1>
+        @foreach($book as $b)
+            <div class="text-center">
+                <h3 class="text-dark">Examen de {{ $b->title }}</h3>
+            </div>
+        @endforeach
     </div>
     <span style="color: white;">{{ $con = 1 }}</span>
     @if(count($preguntas) > 1)
@@ -10,10 +14,13 @@
                 <div class="card">
                     <div class="card-header bg-primary text-white"><span>{{ $con .") " .  $pregunta->pregunta }}</span><br></div>
                     <div class="card-body">
-                        <input type="radio" value="{{ $pregunta->respuesta2 }}"> {{ $pregunta->respuesta2 }}<br>
-                        <input type="radio" value="{{ $pregunta->respuesta3 }}"> {{ $pregunta->respuesta3 }}<br>
-                        <input type="radio" value="{{ $pregunta->respuesta4 }}"> {{ $pregunta->respuesta4 }}<br>
-                        <input type="radio" value="{{ $pregunta->respuesta5 }}"> {{ $pregunta->respuesta5 }}<br>
+                        <fieldset id="group1">
+                            <input name="respuesta_<?php echo $con; ?>" type="radio" value="{{ $pregunta->respuesta }}"> {{ $pregunta->respuesta }}<br>
+                            <input name="respuesta_<?php echo $con; ?>" type="radio" value="{{ $pregunta->respuesta2 }}"> {{ $pregunta->respuesta2 }}<br>
+                            <input name="respuesta_<?php echo $con; ?>" type="radio" value="{{ $pregunta->respuesta3 }}"> {{ $pregunta->respuesta3 }}<br>
+                            <input name="respuesta_<?php echo $con; ?>" type="radio" value="{{ $pregunta->respuesta4 }}"> {{ $pregunta->respuesta4 }}<br>
+                            <input name="respuesta_<?php echo $con; ?>" type="radio" value="{{ $pregunta->respuesta5 }}"> {{ $pregunta->respuesta5 }}<br>
+                        </fieldset>
                     </div>
                 </div>
 
