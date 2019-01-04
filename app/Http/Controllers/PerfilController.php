@@ -28,7 +28,7 @@ class PerfilController extends Controller
         $iuser->second_name = $request->input('second');
         $iuser->last_name = $request->input('last_name');
         $iuser->second_last_name = $request->input('second_last');
-        $iuser->fechadenacimiento = $request->input('date_born');
+        $iuser->fehcaNacimiento = $request->input('date_born');
         $iuser->age = $request->input('age');
         $iuser->nacionalidad = $request->input('country');
         $iuser->provincia = $request->input('department');

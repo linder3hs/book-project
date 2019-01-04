@@ -37,9 +37,12 @@ class PreguntasController extends Controller {
 
     public function procesarPreguntas(Request $request) {
         $preguntas = array();
-        array_push($preguntas, $request);
-        if (!empty($preguntas)) {
-            # evaluar respuestas
+        $respuestas = DB::table('respuestas')->get();
+        $array_respuestas = array('respuestas', $respuestas);
+        if (!empty($array_respuestas)) {
+            foreach ($array_respuestas as $res) {
+                exit(var_dump($res));
+            }
         }
     }
 
