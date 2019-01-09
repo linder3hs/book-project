@@ -55,7 +55,14 @@
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/user/certificate') }}">Certificadores &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/certificacion') }}">Certificaciones &nbsp;&nbsp;&nbsp;</a>
+                    <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
+                            Solicitudes
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="">
+                            <a  style="padding: 4px;" lass="dropdown-item"  href="{{ url('/admin/certificacion') }}">Certificaciones Solicitadas</a>
+                        </div>
+                    </div>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/preguntas') }}">Preguntas &nbsp;&nbsp;&nbsp;</a>
