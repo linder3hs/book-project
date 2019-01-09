@@ -8,8 +8,12 @@ use App\Comemnts;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 
-class PublishedController extends Controller
-{
+class PublishedController extends Controller {
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index() {
         $publics = Publicaciones::orderBy('id', 'desc')->get();
         $comentarios = DB::table('comemnts')->

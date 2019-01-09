@@ -20,4 +20,9 @@ class PreguntasAdminController extends Controller {
         return redirect('/admin/preguntas/')->with('status', 'Cambiaste el numero de preguntas a ' . $number);
     }
 
+    public function setTimeTest(Request $request) {
+        $time = $request->input('time');
+
+    }
+
 }

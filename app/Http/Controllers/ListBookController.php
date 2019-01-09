@@ -14,6 +14,10 @@ class ListBookController extends Controller {
     const EST_CERTIFICAR = 1;
     const EST_EXAMEN = 2;
     const EST_APROBADO = 3;
+
+    public function __construct() {
+        $this->middleware('auth');
+    }
     
     public function index() {
         $books = DB::table('book_registers')

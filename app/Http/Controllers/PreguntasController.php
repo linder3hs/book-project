@@ -9,6 +9,10 @@ use Illuminate\Http\Request;
 
 class PreguntasController extends Controller {
 
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index($isbn = null) {
         if (!empty($isbn)) {
             $book = DB::table('book_registers')->where('isbn', '=', $isbn)->get();

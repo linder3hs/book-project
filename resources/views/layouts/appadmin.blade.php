@@ -52,20 +52,23 @@
                     <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/preguntas') }}">Preguntas &nbsp;&nbsp;&nbsp;</a>
                 </li> -->
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/user/certificate') }}">Certificadores &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/user/certificate') }}">Certificadores &nbsp;</a>
                 </li>
-                <li class="nav-item" style="color: #000000 !important;">
-                    <div class="dropdown">
-                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
-                            Solicitudes
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="">
-                            <a  style="padding: 4px;" lass="dropdown-item"  href="{{ url('/admin/certificacion') }}">Certificaciones Solicitadas</a>
-                        </div>
+                <div class="dropdown">
+                    <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">
+                        Solicitudes&nbsp;&nbsp;
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="">
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="display: inline; color: #FFFFFF;">Solicitudes</a>
+                        <a class="dropdown-item" href="{{ url('/admin/certificacion') }}">Certificaciones Solicitadas</a>
+                        <a class="dropdown-item" href="{{ url('/admin/certificacion') }}">Acreditaciones solicitadas</a>
                     </div>
+                </div>
+                <li class="nav-item" style="color: #000000 !important;">
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/preguntas') }}">Config Acreditadores &nbsp;&nbsp;&nbsp;</a>
                 </li>
                 <li class="nav-item" style="color: #000000 !important;">
-                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('/admin/preguntas') }}">Preguntas &nbsp;&nbsp;&nbsp;</a>
+                    <a style="color: #FFFFFF !important; text-decoration: none;" href="{{ url('#') }}">Config Usuarios</a>
                 </li>
         </ul>
     </div>

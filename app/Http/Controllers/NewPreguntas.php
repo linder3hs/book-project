@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\DB;
 
 class NewPreguntas extends Controller {
 
+    public function __construct() {
+        $this->middleware('auth');
+    }
+
     public function index() {
         $est = Auth::user()->nivel;
         if ($est == 3) {
