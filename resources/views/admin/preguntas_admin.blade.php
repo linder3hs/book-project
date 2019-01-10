@@ -31,7 +31,7 @@
                     </div>
                     <div class="card-body">
                         <div align="center">
-                            <p class="text-left">Cambia el timpo total de los examenes</p>
+                            <p class="text-left">Cambia el tiempo total de los examenes</p>
                             @include('partials.flash')
                             <form action="{{ url('admin/setTimeTest') }}" method="post">
                                 {{ csrf_field() }}
