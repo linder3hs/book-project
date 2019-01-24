@@ -16,12 +16,11 @@
                                     <input name="second" value="{{ ucfirst(Auth::user()->second_name)  }}" type="text" class="form-control" placeholder="Segundo Nombre"><br>
                                 </div>
                                 <div class="col-md-12">
-                                    <input name="last_name" type="text" value="{{ ucfirst(Auth::user()->last_name) }}" class="form-control" placeholder="Primer Apellido"><br>
-                                    <input name="second_last" type="text" value="{{ ucfirst(Auth::user()->second_last_name)  }}"  class="form-control" placeholder="Segundo Apellido"><br>
+                                    <input name="last_name" type="text" value="{{ ucfirst(Auth::user()->last_name) }}" class="form-control" placeholder="Primer last_name"><br>
+                                    <input name="second_last" type="text" value="{{ ucfirst(Auth::user()->second_last_name)  }}"  class="form-control" placeholder="Segundo last_name"><br>
                                 </div>
                                 <div class="col-md-12">
-                                    <input name="date_born" type="date" value="{{ Auth::user()->fechadeNacimiento }}" class="form-control" placeholder="Fecha de Nacimiendo"><br>
-                                    <input name="age" type="text" value="{{ Auth::user()->age  }}" class="form-control" placeholder="Edad"><br>
+                                    <input name="age" type="text" value="{{ Auth::user()->age}}" class="form-control" placeholder="Edad"><br>
                                 </div>
                                 <div class="col-md-12">
                                     <input name="country" value="{{ ucfirst(Auth::user()->nacionalidad) }}" type="text" class="form-control" placeholder="Pais"><br>
@@ -29,7 +28,7 @@
                                 </div>
                                 <div class="col-md-12">
                                     <label>Pon tú foto de perfil</label>
-                                    <input class="form-control" type="file" required name="profile" value="Foto">
+                                    <input class="btn btn-outline-primary" type="file" required name="profile" value="Escoja una foto para su perfil">
                                 </div>
                                 <div class="col-md-12" style="margin-top: 20px;">
                                     <input type="submit" value="Guardar" class="btn btn-md btn-block" style="background-color: #117ab1; color: white;">

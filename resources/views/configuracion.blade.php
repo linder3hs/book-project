@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="form-group{{ $errors->has('last_name') ? ' has-error' : '' }}">
-                    <label for="last_name" class="col-md-4 control-label">Apellido</label>
+                    <label for="last_name" class="col-md-4 control-label">last_name</label>
 
                     <div class="col-md-6">
                         <input id="last_name" type="text" class="form-control" name="last_name" value="{{ old('last_name') }}">

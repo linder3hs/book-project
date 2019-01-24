@@ -22,12 +22,10 @@ class ListUserAdminController extends Controller {
 
     public function updatenivel(Request $request) {
         $user = $request->input('userid');
-        $nivel = $request->input('nivel');
         $dbuser = new User();
         $dbuser->exists = true;
         $dbuser->id = $user;
-        $dbuser->nivel = $nivel;
-        if (!empty($user) && !empty($nivel) && !empty($dbuser)) {
+        if (!empty($user) && !empty($dbuser)) {
             $dbuser->save();
             return redirect('admin/usuarios');
         }

@@ -18,19 +18,13 @@ class NewPreguntas extends Controller {
     }
 
     public function index() {
-        $est = Auth::user()->nivel;
-        if ($est == 3) {
-            $certificacions = DB::table('certificaciones')
-                                ->where('user_id', '=', Auth::user()->id)
-                                ->get();
-            $preguntas = DB::table('preguntas')
-                            ->where('iduser', '=', Auth::user()->id)
+        $certificacions = DB::table('certificaciones')
+                            ->where('user_id', '=', Auth::user()->id)
                             ->get();
-            return view('addpreguntas')->with('certificaciones', $certificacions)->with('preguntas', $preguntas);
-        } else {
-           return redirect('/');
-        }
-
+        $preguntas = DB::table('preguntas')
+                        ->where('iduser', '=', Auth::user()->id)
+                        ->get();
+        return view('addpreguntas')->with('certificaciones', $certificacions)->with('preguntas', $preguntas);
     }
 
     public function newPregunta(Request $request) {

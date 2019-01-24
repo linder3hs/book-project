@@ -10,7 +10,7 @@
             <thead class="bg-primary text-white">
                 <tr>
                     <th style="width: 10%;">Nombre</th>
-                    <th>Apellido</th>
+                    <th>last_name</th>
                     <th>Correo</th>
                     <th>F. Nac</th>
                     <th>Nivel</th>

@@ -17,7 +17,7 @@ class CertificacionUserAdminController extends Controller {
     const EST_CERTIFICACION_DESAPROBADA = 2;
 
     public function index() {
-        $users = DB::table('users')->where('nivel', '=', 3)->get();
+        $users = DB::table('users')->get();
         if (!empty($users)) {
             return view('admin.list_certificate')->with('users', $users);
         } else {
