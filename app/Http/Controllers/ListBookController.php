@@ -11,9 +11,11 @@ use Illuminate\Support\Facades\DB;
 class ListBookController extends Controller {
 
     const EST_CREADO = 0;
-    const EST_CERTIFICAR = 1;
-    const EST_EXAMEN = 2;
-    const EST_APROBADO = 3;
+    const EST_SOLICITUD_CERTIFICAR = 1;
+    const EST_SOLICITUD_EXAMEN = 2;
+    const EST_CERTIFICACION_APROBADA = 3;
+    const EST_EXAMEN_APROBADO = 4;
+    const EST_EXAMEN_DESAPROBADO = 5;
 
     public function __construct() {
         $this->middleware('auth');
@@ -22,7 +24,7 @@ class ListBookController extends Controller {
     public function index() {
         $books = DB::table('book_registers')
                 ->where('user_id', '=', Auth::user()->id)
-                ->whereIn('estado', array(self::EST_CREADO, self::EST_CERTIFICAR, self::EST_EXAMEN))
+                ->whereIn('estado', array(self::EST_CREADO, self::EST_SOLICITUD_CERTIFICAR, self::EST_SOLICITUD_EXAMEN))
                 ->get();
         if (!empty($books)) {
             $list = array('libros' => $books);
@@ -37,15 +39,15 @@ class ListBookController extends Controller {
             ->get();
         $certificateb = DB::table('book_registers')
             ->where('user_id', '=', Auth::user()->id)
-            ->whereIn('estado', array(self::EST_CERTIFICAR, self::EST_EXAMEN, self::EST_APROBADO))
+            ->whereIn('estado', array(self::EST_SOLICITUD_CERTIFICAR, self::EST_SOLICITUD_EXAMEN, self::EST_CERTIFICACION_APROBADA))
             ->get();
         $examenb = DB::table('book_registers')
             ->where('user_id', '=', Auth::user()->id)
-            ->where('estado', '=', self::EST_EXAMEN)
+            ->where('estado', '=', self::EST_SOLICITUD_EXAMEN)
             ->get();
         $aprobadob = DB::table('book_registers')
             ->where('user_id', '=', Auth::user()->id)
-            ->where('estado', '=', self::EST_APROBADO)
+            ->where('estado', '=', self::EST_CERTIFICACION_APROBADA)
             ->get();
         if (!empty($createb)) {
             return view('lista_book_all')->with('createb', $createb)->with('certificateb', $certificateb)
@@ -63,8 +65,9 @@ class ListBookController extends Controller {
         $certicacion->save();
         $idbook = $request->input('idbook');
         $libros = book_register::find($idbook);
-        $libros->estado = 1;
+        $libros->estado = self::EST_SOLICITUD_CERTIFICAR;
         $libros->save();
         return redirect('/home/lista');
     }
+
 }

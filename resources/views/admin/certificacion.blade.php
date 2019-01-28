@@ -2,7 +2,7 @@
 @section('content')
     <div class="container">
         <div align="center" style="margin-top: 40px;">
-            <h4>Solicitud de Certificaciones</h4>
+            <h4>Solicitud de Examenes y Certificaciones</h4>
         </div>
         <div class="table-responsive" align="center">
             <table class="table table-striped table-hover text-center">

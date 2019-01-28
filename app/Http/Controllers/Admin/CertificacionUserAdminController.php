@@ -33,7 +33,7 @@ class CertificacionUserAdminController extends Controller {
 
             $libros = DB::table('book_registers')
                 ->where('user_id', '=', $id)
-                ->whereIn('estado', array(ListBookController::EST_CERTIFICAR, ListBookController::EST_EXAMEN))
+                ->whereIn('estado', array(ListBookController::EST_SOLICITUD_CERTIFICAR, ListBookController::EST_SOLICITUD_EXAMEN))
                 ->get();
             if (!empty($usuario)) {
                 return view('admin.detalle_usuario_certidicador')
@@ -56,7 +56,7 @@ class CertificacionUserAdminController extends Controller {
         $idbook = $request->input('book_id');
         $user = $request->input('id_user');
         $libro = book_register::find($idbook);
-        $libro->estado = ListBookController::EST_APROBADO;
+        $libro->estado = ListBookController::EST_CERTIFICACION_APROBADA;
         $libro->save();
         $certicacion = new Certificaciones();
         $certicacion->user_id = $user;
@@ -98,7 +98,7 @@ class CertificacionUserAdminController extends Controller {
         $certificacion->save();
         $idbook = $request->input('book_id');
         $libro = book_register::find($idbook);
-        $libro->estado = ListBookController::EST_EXAMEN;
+        $libro->estado = ListBookController::EST_SOLICITUD_EXAMEN;
         $libro->save();
         return redirect('/admin/certificacion');
     }
