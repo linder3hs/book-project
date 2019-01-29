@@ -70,4 +70,12 @@ class ListBookController extends Controller {
         return redirect('/home/lista');
     }
 
+    public function solicitarExamen(Request $request) {
+        $idbook = $request->input('idbook');
+        $libros = book_register::find($idbook);
+        $libros->estado = self::EST_SOLICITUD_CERTIFICAR;
+        $libros->save();
+        return redirect('/home/lista');
+    }
+
 }

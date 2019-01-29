@@ -18,11 +18,7 @@ class CertificacionUserAdminController extends Controller {
 
     public function index() {
         $users = DB::table('users')->get();
-        if (!empty($users)) {
-            return view('admin.list_certificate')->with('users', $users);
-        } else {
-            return redirect('/admin');
-        }
+        return view('admin.list_certificate')->with('users', $users);
     }
 
     public function detailUsercertificate($id) {
@@ -30,7 +26,6 @@ class CertificacionUserAdminController extends Controller {
             $usuario = DB::table('users')
                 ->where('users.id', '=' , $id)
                 ->get();
-
             $libros = DB::table('book_registers')
                 ->where('user_id', '=', $id)
                 ->whereIn('estado', array(ListBookController::EST_SOLICITUD_CERTIFICAR, ListBookController::EST_SOLICITUD_EXAMEN))
@@ -98,9 +93,17 @@ class CertificacionUserAdminController extends Controller {
         $certificacion->save();
         $idbook = $request->input('book_id');
         $libro = book_register::find($idbook);
+        $libro->estado = ListBookController::EST_CERTIFICACION_APROBADA;
+        $libro->save();
+        return redirect('/admin/certificacion')->with('status', 'Aprobas la certificación del libro ' . $idbook);
+    }
+
+    public function aprobarParaExamen(Request $request) {
+        $idbook = $request->input('book_id');
+        $libro = book_register::find($idbook);
         $libro->estado = ListBookController::EST_SOLICITUD_EXAMEN;
         $libro->save();
-        return redirect('/admin/certificacion');
+        return redirect('/admin/certificacion')->with('status', 'Aprobaste para que pueda dar el examen');
     }
 
 }

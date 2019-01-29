@@ -55,6 +55,7 @@ Route::get('/admin/preguntas', 'Admin\PreguntasAdminController@index');
 Route::post('/admin/login', 'Admin\AdminController@login')->name('admin.login.submit');
 Route::post('/admin/updatenivel', 'Admin\ListUserAdminController@updatenivel');
 Route::post('admin/aprobarCertificacion', 'Admin\CertificacionUserAdminController@aprobarCertificacion');
+Route::post('admin/aprobarExamen', 'Admin\CertificacionUserAdminController@aprobarParaExamen');
 Route::post('admin/certificate/aprobar', 'Admin\CertificacionUserAdminController@aprobarUserCertificate');
 Route::post('/admin/setAsk', 'Admin\PreguntasAdminController@setAskAdmin');
 

@@ -78,6 +78,9 @@
                                         <span class="font-weight-bold">Fecha de creación:&nbsp;</span>
                                         <span>{{ $book->created_at }}</span>
                                     </p>
+                                    <p>
+                                        <a href="" class="btn btn-outline-primary">Añadir Preguntas</a>
+                                    </p>
                                 </div>
                             </div>
                             <br>

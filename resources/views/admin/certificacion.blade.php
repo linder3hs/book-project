@@ -5,6 +5,7 @@
             <h4>Solicitud de Examenes y Certificaciones</h4>
         </div>
         <div class="table-responsive" align="center">
+            @include('partials.flash')
             <table class="table table-striped table-hover text-center">
                 <tr>
                     <th>Libro</th>
@@ -22,7 +23,7 @@
                             <td>{{ $certificacion->name . " " . $certificacion->last_name }}</td>
                             <td>{{ $certificacion->created_at }}</td>
                             <td>
-                                <form action="{{ url(('/admin/aprobarCertificacion')) }}" method="post">
+                                <form action="{{ url(('/admin/aprobarExamen')) }}" method="post">
                                     <input type="hidden" name="_token" value="{{ csrf_token() }}">
                                     <input type="hidden" name="book_id" value="{{ $certificacion->book_id }}">
                                     <input type="hidden" name="idc" value="{{ $certificacion->id }}">
